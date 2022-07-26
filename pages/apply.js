@@ -3,7 +3,6 @@ import { Button, Card, CardContent, CircularProgress, Grid, TextField, Typograph
 import { Context } from '../context/Index';
 import emailjs from '@emailjs/browser';
 import Link from 'next/link'
-import Course_TiTle_CSE from '../dashboardComponents/Courses';
 
 
 
@@ -22,7 +21,6 @@ const Apply = () => {
   } 
   const [progress, setProgress] = useState(false)
   const [visible, setVisible] = useState(false);
-  const [see, setSee] = useState(false)
  
   const form = useRef();
 
@@ -42,12 +40,6 @@ const Apply = () => {
       });
   };
     return (
-
-      <>
-      { 
-       see? <Course_TiTle_CSE/>
-
-         :
       <div className='contactContainer'>
         {  progress? <CircularProgress/> :
         <> 
@@ -60,7 +52,7 @@ const Apply = () => {
       <Grid>
         <Card style={{ maxWidth: 450, padding: "20px 5px", margin: "0 auto",marginBottom:'4rem' }}>
           <CardContent>
-            {state.program}
+            
             
             <form ref={form} onSubmit={sendEmail}>
               <Grid container spacing={3}>
@@ -199,7 +191,7 @@ const Apply = () => {
       <> 
       {
 
-      state?.program==='Computer Science and Engineering'?
+      state.program==='Computer Science and Engineering'?
       <>
       <Typography style={{fontSize:'25px',margin:'2rem',fontWeight:'bold', color:'black'}}  align="center">
          Thank you!
@@ -212,11 +204,11 @@ const Apply = () => {
            <Typography style={{fontWeight:'bold', color:'black', fontSize:'20px'}}>
            We will let you know if your application is granted by our admission committee.
             </Typography> 
-           <Typography style={{fontWeight:'bold', marginTop:'3rem', color:'black', fontSize:'20px'}}>
+           <Typography style={{fontWeight:'bold', color:'black', fontSize:'20px'}}>
            You can now check our CSE courses and credits to get deeper into our program's pros and cons.
             </Typography> 
+            <Link href='/course_title_cse'> <Button>Continue</Button></Link> 
           </CardContent>
-          <button onClick={() => setSee(true)} className='nextBackButton'>Continue</button>
         </Card>
       </Grid>
       </>
@@ -233,8 +225,8 @@ const Apply = () => {
            <Typography style={{fontWeight:'bold', color:'black', fontSize:'20px'}}>
            We will let you know if your application is granted by our admission committee.
             </Typography> 
+            <Link href='/'> <Button>Continue</Button></Link> 
           </CardContent>
-         
         </Card>
       </Grid>
       </>
@@ -242,8 +234,7 @@ const Apply = () => {
       </>   
       }
            </>}
-      </div>}
-      </>
+      </div>
 
       )
 }
