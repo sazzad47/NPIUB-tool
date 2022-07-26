@@ -2,7 +2,7 @@ import React, { useRef, useContext, useState } from 'react';
 import { Button, Card, CardContent, CircularProgress, Grid, TextField, Typography } from '@mui/material';
 import { Context } from '../context/Index';
 import emailjs from '@emailjs/browser';
-import Link from 'next/link'
+
 import Course_TiTle_CSE from '../dashboardComponents/Courses';
 
 
@@ -60,7 +60,7 @@ const Apply = () => {
       <Grid>
         <Card style={{ maxWidth: 450, padding: "20px 5px", margin: "0 auto",marginBottom:'4rem' }}>
           <CardContent>
-            {state.program}
+           
             
             <form ref={form} onSubmit={sendEmail}>
               <Grid container spacing={3}>
