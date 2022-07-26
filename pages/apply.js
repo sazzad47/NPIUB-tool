@@ -3,6 +3,7 @@ import { Button, Card, CardContent, CircularProgress, Grid, TextField, Typograph
 import { Context } from '../context/Index';
 import emailjs from '@emailjs/browser';
 import Link from 'next/link'
+import Course_TiTle_CSE from '../dashboardComponents/Courses';
 
 
 
@@ -21,6 +22,7 @@ const Apply = () => {
   } 
   const [progress, setProgress] = useState(false)
   const [visible, setVisible] = useState(false);
+  const [see, setSee] = useState(false)
  
   const form = useRef();
 
@@ -40,6 +42,12 @@ const Apply = () => {
       });
   };
     return (
+
+      <>
+      { 
+       see? <Course_TiTle_CSE/>
+
+         :
       <div className='contactContainer'>
         {  progress? <CircularProgress/> :
         <> 
@@ -52,10 +60,27 @@ const Apply = () => {
       <Grid>
         <Card style={{ maxWidth: 450, padding: "20px 5px", margin: "0 auto",marginBottom:'4rem' }}>
           <CardContent>
-            
+            {state.program}
             
             <form ref={form} onSubmit={sendEmail}>
               <Grid container spacing={3}>
+                <div className='d-none'>
+                <Grid  item xs={12}>
+                
+                <TextField 
+                type='text'
+                placeholder="Enter your full name" 
+                label="Your Full Name" 
+                variant="outlined" 
+                fullWidth 
+                required
+                id="program"
+                name="program"
+                value={program}
+                onChange={handleChangeInput} />
+              </Grid>
+                </div>
+               
                 <Grid  item xs={12}>
                   <TextField 
                   type='text'
@@ -143,6 +168,8 @@ const Apply = () => {
                   variant="outlined" 
                   fullWidth 
                   required
+                  multiline
+                  minRows={10}
                   id="message"
                   name="message"
                   value={message}
@@ -170,6 +197,31 @@ const Apply = () => {
       </>
       :
       <> 
+      {
+
+      state.program==='Computer Science and Engineering'?
+      <>
+      <Typography style={{fontSize:'25px',margin:'2rem',fontWeight:'bold', color:'black'}}  align="center">
+         Thank you!
+       </Typography>
+      <Grid>
+        <Card elevation={3} style={{display:'flex',flexDirection:'column',justifyItems:"center", maxWidth: 450, padding: "20px 5px", margin: "4rem auto" }}>
+          <CardContent>
+            
+            
+           <Typography style={{fontWeight:'bold', color:'black', fontSize:'20px'}}>
+           We will let you know if your application is granted by our admission committee.
+            </Typography> 
+           <Typography style={{fontWeight:'bold', marginTop:'3rem', color:'black', fontSize:'20px'}}>
+           You can now check our CSE courses and credits to get deeper into our program's pros and cons.
+            </Typography> 
+          </CardContent>
+                  <button onClick={() => setSee(true)} className='nextBackButton'>Continue</button>
+        </Card>
+      </Grid>
+      </>
+      :
+      <>
       <Typography style={{fontSize:'25px',margin:'2rem',fontWeight:'bold', color:'black'}}  align="center">
          Thank you!
        </Typography>
@@ -182,12 +234,16 @@ const Apply = () => {
            We will let you know if your application is granted by our admission committee.
             </Typography> 
           </CardContent>
+         
         </Card>
       </Grid>
+      </>
+      }
       </>   
       }
            </>}
-      </div>
+      </div>}
+      </>
 
       )
 }
