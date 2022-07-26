@@ -44,7 +44,10 @@ const Apply = () => {
     return (
 
       <>
-     
+      { 
+       see? <Course_TiTle_CSE/>
+
+         :
       <div className='contactContainer'>
         {  progress? <CircularProgress/> :
         <> 
@@ -196,13 +199,13 @@ const Apply = () => {
       <> 
       {
 
-      state.program==='Computer Science and Engineering'?
+      state?.program==='Computer Science and Engineering'?
       <>
       <Typography style={{fontSize:'25px',margin:'2rem',fontWeight:'bold', color:'black'}}  align="center">
          Thank you!
        </Typography>
       <Grid>
-        <Card elevation={3} style={{display:'flex',flexDirection:'column',justifyItems:"center", maxWidth: 450, padding: "20px 5px", margin: "4rem auto" }}>
+        <Card elevation={3} style={{ maxWidth: 450, padding: "20px 5px", margin: "4rem auto" }}>
           <CardContent>
             
             
@@ -213,7 +216,7 @@ const Apply = () => {
            You can now check our CSE courses and credits to get deeper into our program's pros and cons.
             </Typography> 
           </CardContent>
-                  <button onClick={() => setSee(true)} className='nextBackButton'>Continue</button>
+          <button onClick={() => setSee(true)} className='nextBackButton'>Continue</button>
         </Card>
       </Grid>
       </>
@@ -239,7 +242,7 @@ const Apply = () => {
       </>   
       }
            </>}
-      </div>
+      </div>}
       </>
 
       )
