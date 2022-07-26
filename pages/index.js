@@ -7,11 +7,19 @@ const Home = () => {
   return (
     <>
       <div className="homePage col">
-        <div className="row">
+             
+
+        <div className="row mx-3">
           <Typography
-            style={{ fontSize: "25px", fontWeight: "bold", color: "black" }}
+            style={{
+              fontSize: "22px",
+              fontWeight: "bold",
+              marginTop: "3rem",
+              color: "black",
+              
+            }}
+          
             align="center"
-            className="mx-3"
           >
             Want to know which programs are the best suited for you?
           </Typography>
@@ -137,7 +145,7 @@ const Home = () => {
               </li>
             </ul>
           </div>
-          <div className="col d-flex align-items-center justify-content-center mt-5">
+          <div className="col d-flex align-items-center justify-content-center my-3">
             <Link href="/evaluateMe">
               <button
                 className="nextBackButton"
