@@ -56,24 +56,8 @@ const Apply = () => {
             
             <form ref={form} onSubmit={sendEmail}>
               <Grid container spacing={3}>
-                <div className='d-none'>
                 <Grid  item xs={12}>
                 
-                <TextField 
-                type='text'
-                placeholder="Enter your full name" 
-                label="Your Full Name" 
-                variant="outlined" 
-                fullWidth 
-                required
-                id="program"
-                name="program"
-                value={program}
-                onChange={handleChangeInput} />
-              </Grid>
-                </div>
-               
-                <Grid  item xs={12}>
                   <TextField 
                   type='text'
                   placeholder="Enter your full name" 
@@ -86,6 +70,23 @@ const Apply = () => {
                   value={user_name}
                   onChange={handleChangeInput} />
                 </Grid>
+                <div className='d-none'>
+
+               
+                <Grid  item xs={12}>
+                  <TextField 
+                  type='text'
+                  placeholder="Enter your full name" 
+                  label="Your Full Name" 
+                  variant="outlined" 
+                  fullWidth 
+               
+                  id="program"
+                  name="program"
+                  value={program}
+                  onChange={handleChangeInput} />
+                </Grid>
+                </div>
                 <Grid  item xs={12}>
                   <TextField 
                   type='email'
@@ -197,18 +198,28 @@ const Apply = () => {
          Thank you!
        </Typography>
       <Grid>
-        <Card elevation={3} style={{ maxWidth: 450, padding: "20px 5px", margin: "4rem auto" }}>
+        <Card elevation={3} style={{ maxWidth: 450, padding: "20px 5px", margin: "4rem auto",display:'flex',flexDirection:'column',justifyItems:'center' }}>
           <CardContent>
             
             
            <Typography style={{fontWeight:'bold', color:'black', fontSize:'20px'}}>
            We will let you know if your application is granted by our admission committee.
             </Typography> 
-           <Typography style={{fontWeight:'bold', color:'black', fontSize:'20px'}}>
+           <Typography style={{fontWeight:'bold', color:'black', fontSize:'20px',marginTop:'4rem'}}>
            You can now check our CSE courses and credits to get deeper into our program's pros and cons.
             </Typography> 
-            <Link href='/course_title_cse'> <Button>Continue</Button></Link> 
           </CardContent>
+          <div className="col d-flex align-items-center justify-content-center my-3">
+            <Link href='/courses'>
+              <button
+                className="nextBackButton"
+                
+              >
+                Continue
+              </button>
+            </Link>
+          </div>
+           
         </Card>
       </Grid>
       </>
@@ -225,8 +236,17 @@ const Apply = () => {
            <Typography style={{fontWeight:'bold', color:'black', fontSize:'20px'}}>
            We will let you know if your application is granted by our admission committee.
             </Typography> 
-            <Link href='/'> <Button>Continue</Button></Link> 
           </CardContent>
+          <div className="col d-flex align-items-center justify-content-center my-3">
+            <Link href='/'>
+              <button
+                className="nextBackButton"
+                
+              >
+                Back to Home
+              </button>
+            </Link>
+          </div>
         </Card>
       </Grid>
       </>

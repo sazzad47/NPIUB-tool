@@ -1,9 +1,9 @@
 import { Button, Typography } from '@mui/material'
 import Link from 'next/link'
 import React from 'react'
-import CourseTitleCSE from './CourseTitleCSE'
+import CourseTitleCSE from '../dashboardComponents/CourseTitleCSE'
 
-const Course_TiTle_CSE = () => {
+const Courses = () => {
   return (
     <div className='csePage'>
         <Typography style={{fontSize:'25px', color:'black',fontWeight:'bold',margin:'5rem 0.5rem'}} align='center'>Computer Science and Engineering</Typography>
@@ -13,4 +13,4 @@ const Course_TiTle_CSE = () => {
   )
 }
 
-export default Course_TiTle_CSE
+export default Courses

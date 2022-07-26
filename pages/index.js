@@ -146,13 +146,16 @@ const Home = () => {
             </ul>
           </div>
           <div className="col d-flex align-items-center justify-content-center my-3">
-            <Link href="/evaluateMe">
+            <Link href="/evaluateMe"><a>
+
+          
               <button
                 className="nextBackButton"
                 
               >
                 Evaluate me
               </button>
+              </a>
             </Link>
           </div>
         </div>
