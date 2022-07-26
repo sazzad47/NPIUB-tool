@@ -43,7 +43,9 @@ const Apply = () => {
   };
     return (
 
-      <>
+      <div>
+
+     
       { 
        see? <Course_TiTle_CSE/>
 
@@ -243,7 +245,7 @@ const Apply = () => {
       }
            </>}
       </div>}
-      </>
+      </div>
 
       )
 }
