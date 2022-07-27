@@ -1,14 +1,10 @@
 import Link from "next/link";
 import { Grid, Typography } from "@mui/material";
 
-
 const Home = () => {
-  
   return (
     <>
       <div className="homePage col">
-             
-
         <div className="row mx-3">
           <Typography
             style={{
@@ -16,9 +12,7 @@ const Home = () => {
               fontWeight: "bold",
               marginTop: "3rem",
               color: "black",
-              
             }}
-          
             align="center"
           >
             Want to know which programs are the best suited for you?
@@ -45,7 +39,11 @@ const Home = () => {
             alignItems="center"
           >
             <Grid
-              style={{display:'flex', alignItems:'center',justifyContent:'center'}}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
               item
               sm={12}
               md={4}
@@ -66,7 +64,11 @@ const Home = () => {
               </div>
             </Grid>
             <Grid
-              style={{display:'flex', alignItems:'center',justifyContent:'center'}}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
               item
               sm={12}
               md={4}
@@ -87,7 +89,11 @@ const Home = () => {
               </div>
             </Grid>
             <Grid
-              style={{display:'flex', alignItems:'center',justifyContent:'center'}}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
               item
               sm={12}
               md={4}
@@ -146,15 +152,9 @@ const Home = () => {
             </ul>
           </div>
           <div className="col d-flex align-items-center justify-content-center my-3">
-            <Link href="/evaluateMe"><a>
-
-          
-              <button
-                className="nextBackButton"
-                
-              >
-                Evaluate me
-              </button>
+            <Link href="/evaluateMe">
+              <a>
+                <button className="nextBackButton">Evaluate me</button>
               </a>
             </Link>
           </div>
