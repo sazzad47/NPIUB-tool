@@ -219,9 +219,7 @@ const Apply = () => {
                           <button
                             type="submit"
                             value="Send"
-                            variant="contained"
-                            color="primary"
-                            fullWidth
+                            className="nextBackButton"
                           >
                             Submit
                           </button>

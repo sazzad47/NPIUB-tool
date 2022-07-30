@@ -22,9 +22,6 @@ const Courses = () => {
         <button
           className="nextBackButton"
           style={{ margin: "3rem auto", marginBottom: "3rem" }}
-          variant="contained"
-          color="primary"
-          disableRipple
         >
           Back to Home
         </button>
