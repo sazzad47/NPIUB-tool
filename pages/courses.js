@@ -1,4 +1,4 @@
-import { Button, Typography } from "@mui/material";
+import { Typography } from "@material-ui/core";
 import Link from "next/link";
 import React from "react";
 import CourseTitleCSE from "../dashboardComponents/CourseTitleCSE";
@@ -19,14 +19,15 @@ const Courses = () => {
       </Typography>
       <CourseTitleCSE />
       <Link href="/">
-        <Button
+        <button
+          className="nextBackButton"
           style={{ margin: "3rem auto", marginBottom: "3rem" }}
           variant="contained"
           color="primary"
           disableRipple
         >
           Back to Home
-        </Button>
+        </button>
       </Link>
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../context/Index";
 import { useRouter } from "next/router";
-import { Card, Grid, Typography } from "@mui/material";
+import { Card, Grid, Typography } from "@material-ui/core";
 import Academics from "./Academics";
 import ExtraCurriculars from "./ExtraCurriculars";
 import Achievements from "./Achievements";

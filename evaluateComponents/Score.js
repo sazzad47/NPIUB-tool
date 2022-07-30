@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../context/Index";
 
-import { Typography } from "@mui/material";
+import { Typography } from "@material-ui/core";
 
 import UnderSSC from "../programs/UnderSSC";
 import SSCPrograms from "../programs/SSCPrograms";

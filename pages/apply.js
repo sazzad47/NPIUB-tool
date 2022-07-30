@@ -1,13 +1,13 @@
 import React, { useRef, useContext, useState } from "react";
 import {
-  Button,
+ 
   Card,
   CardContent,
   CircularProgress,
   Grid,
   TextField,
   Typography,
-} from "@mui/material";
+} from "@material-ui/core";
 import { Context } from "../context/Index";
 import emailjs from "@emailjs/browser";
 import Link from "next/link";
@@ -216,7 +216,7 @@ const Apply = () => {
                         </Grid>
 
                         <Grid item xs={12}>
-                          <Button
+                          <button
                             type="submit"
                             value="Send"
                             variant="contained"
@@ -224,7 +224,7 @@ const Apply = () => {
                             fullWidth
                           >
                             Submit
-                          </Button>
+                          </button>
                         </Grid>
                       </Grid>
                     </form>

@@ -1,5 +1,5 @@
 import { yearData, boardData, facultyData } from "./data2";
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography } from "@material-ui/core";
 
 const Academics = ({ userData, setUserData }) => {
   const {

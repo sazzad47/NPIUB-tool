@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography } from "@material-ui/core";
 
 const Home = () => {
   return (

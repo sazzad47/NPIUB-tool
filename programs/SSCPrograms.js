@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../context/Index";
 import Link from "next/link";
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography } from "@material-ui/core";
 
 import { scienceProgramsData } from "../evaluateComponents/data2";
 

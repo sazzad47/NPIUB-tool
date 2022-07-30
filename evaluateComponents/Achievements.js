@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography } from "@material-ui/core";
 
 const Achievements = ({ userData, setUserData }) => {
   const { achievements, volunteerAchievements } = userData;
