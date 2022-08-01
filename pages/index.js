@@ -11,7 +11,7 @@ const Home = () => {
               fontSize: "22px",
               fontWeight: "bold",
               marginTop: "3rem",
-              color: "black",
+              color: "#08c7ba",
             }}
             align="center"
           >
@@ -24,7 +24,7 @@ const Home = () => {
               fontSize: "20px",
               marginTop: "2rem",
               fontWeight: "bold",
-              color: "black",
+              color: "#08c7ba",
             }}
             align="center"
           >
@@ -55,7 +55,7 @@ const Home = () => {
                   style={{
                     fontSize: "15px",
                     marginTop: "5px",
-                    color: "blueviolet",
+                    color: "#08c7ba",
                   }}
                 >
                   {" "}
@@ -80,7 +80,7 @@ const Home = () => {
                   style={{
                     fontSize: "15px",
                     marginTop: "5px",
-                    color: "blueviolet",
+                    color: "#08c7ba",
                   }}
                 >
                   {" "}
@@ -105,7 +105,7 @@ const Home = () => {
                   style={{
                     fontSize: "15px",
                     marginTop: "5px",
-                    color: "blueviolet",
+                    color: "#08c7ba",
                   }}
                 >
                   Achievements
@@ -120,7 +120,7 @@ const Home = () => {
               fontSize: "20px",
               fontWeight: "bold",
               marginTop: "3rem",
-              color: "black",
+              color: "#08c7ba",
             }}
             align="center"
           >
@@ -134,18 +134,18 @@ const Home = () => {
           <div className="col-12 col-md-6 px-2 py-5 py-md-0 d-flex align-items-center justify-content-center">
             <ul className="mx-5">
               <li
-                style={{ fontWeight: "bold", color: "black", fontSize: "16px" }}
+                style={{ fontWeight: "bold", color: "#08c7ba", fontSize: "16px" }}
               >
                 Understand your Profile Strengths
               </li>
 
               <li
-                style={{ fontWeight: "bold", color: "black", fontSize: "16px" }}
+                style={{ fontWeight: "bold", color: "#08c7ba", fontSize: "16px" }}
               >
                 Get a program list based on your profile
               </li>
               <li
-                style={{ fontWeight: "bold", color: "black", fontSize: "16px" }}
+                style={{ fontWeight: "bold", color: "#08c7ba", fontSize: "16px" }}
               >
                 Get a scholarship list according to your profile
               </li>
@@ -154,7 +154,7 @@ const Home = () => {
           <div className="col d-flex align-items-center justify-content-center my-3">
             <Link href="/evaluateMe">
               <a>
-                <button className="nextBackButton">Evaluate me</button>
+                <button className="upbtn">Evaluate me</button>
               </a>
             </Link>
           </div>

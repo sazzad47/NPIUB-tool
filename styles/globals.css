@@ -5,7 +5,8 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     width: auto!important; 
-    overflow-x: hidden!important
+    overflow-x: hidden!important;
+   
 }
 
 a {
@@ -16,6 +17,8 @@ a {
 * {
   box-sizing: border-box;
 }
+@import url('./apply.css');
+@import url('./evaluate.css');
 
 @media (prefers-color-scheme: dark) {
   html {
@@ -24,15 +27,17 @@ a {
   body {
     color: white;
     background: black;
+  
   }
 }
 .homePage {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 5rem;
   max-width: 100%;
   min-height: 100vh;
+  background-color: #041838;
+  
 }
 .homeTitle {
   font-size: 50px;
@@ -75,9 +80,10 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 .score {
-  background-color: rgb(183, 223, 241);
+  background-color: #08c7ba;
   font-weight: bold;
   font-size: 20px;
   padding: 2rem 3rem;
@@ -89,6 +95,7 @@ a {
   margin: 1rem;
   display: flex;
   flex-direction: column;
+  color: #08c7ba;
 }
 .nextBackButton {
   background-color: rgb(72, 9, 132);
@@ -107,7 +114,7 @@ a {
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
-  background: url(../public/evaluateMyProfile.png) no-repeat;
+  background: url(../public/evaluateMyProfile-up.png) no-repeat;
 
   background-size: cover;
   background-position: center;
@@ -118,8 +125,8 @@ a {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  background: url(../public/score.png) no-repeat;
-  border: 2px solid blueviolet;
+  background: url(../public/score-up.png) no-repeat;
+  border: 2px solid #08c7ba;
   background-size: cover;
   background-position: center;
   width: 130px;
@@ -131,8 +138,8 @@ a {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  background: url(../public/academics.png) no-repeat;
-  border: 2px solid blueviolet;
+  background: url(../public/academics-up.png) no-repeat;
+  border: 2px solid #08c7ba;
   background-size: cover;
   background-position: center;
   width: 130px;
@@ -144,8 +151,8 @@ a {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  background: url(../public//achievements.png) no-repeat;
-  border: 2px solid blueviolet;
+  background: url(../public/achievements-up.png) no-repeat;
+  border: 2px solid #08c7ba;
   background-size: cover;
   background-position: center;
   width: 130px;
@@ -157,8 +164,8 @@ a {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  background: url(../public/extra.png) no-repeat;
-  border: 2px solid rgb(168, 99, 233);
+  background: url(../public/extra-up.png) no-repeat;
+  border: 2px solid #08c7ba;
   background-size: cover;
   background-position: center;
   width: 130px;
@@ -170,8 +177,8 @@ a {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  background: url(../public/score.png) no-repeat;
-  border: 1px solid blueviolet;
+  background: url(../public/score-up.png) no-repeat;
+  
   background-size: cover;
   background-position: center;
   width: 130px;
@@ -183,8 +190,8 @@ a {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  background: url(../public/academics.png) no-repeat;
-  border: 1px solid blueviolet;
+  background: url(../public/academics-up.png) no-repeat;
+ 
   background-size: cover;
   background-position: center;
   width: 130px;
@@ -196,8 +203,8 @@ a {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  background: url(../public/achievements.png) no-repeat;
-  border: 1px solid blueviolet;
+  background: url(../public/achievements-up.png) no-repeat;
+  
   background-size: cover;
   background-position: center;
   width: 130px;
@@ -209,8 +216,8 @@ a {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  background: url(../public/extra.png) no-repeat;
-  border: 1px solid rgb(145, 100, 186);
+  background: url(../public/extra-up.png) no-repeat;
+ 
   background-size: cover;
   background-position: center;
   width: 130px;
@@ -273,7 +280,7 @@ a {
 
 .custom-form {
   position: relative;
-  border: 0.1px solid rgb(149, 210, 238);
+  border: 0.1px solid #0b306b;
   word-wrap: break-word;
   display: flex;
   flex-direction: column;
@@ -331,7 +338,8 @@ option {
   margin-top: -10px;
   margin-left: 10px;
   margin-right: auto;
-  background-color: white;
+  background-color: #052252;
+  color: #08c7ba;
   word-wrap: break-word;
 }
 
@@ -387,6 +395,7 @@ button {
 }
 .select-wrapper {
   position: relative;
+  
 }
 
 .select-wrapper::after {
@@ -395,6 +404,8 @@ button {
   top: 42px;
   right: 35px;
   position: absolute;
+  color: #08c7ba;
+  
 }
 .inputEvaluate {
   outline: none;
@@ -410,7 +421,7 @@ button {
 }
 
 .contactContainer {
-  max-width: 100%;
+  width: 100%;
   min-height: 100vh;
   background-color: white;
   display: flex;
@@ -418,60 +429,11 @@ button {
   align-items: center;
   justify-content: center;
   overflow-x: hidden;
-}
-.contactText {
-  margin: 3rem;
-  margin-top: 10rem;
-  color: black;
-  position: relative;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.contactForm {
-  margin-bottom: 6rem;
-  max-width: 60rem;
-  background-color: #e3e9f3;
-}
-.contactForm label {
-  font-size: 20px;
-  color: black;
-  margin-bottom: 0.5rem;
-}
-.contactForm input {
-  background-color: white;
-  outline: none;
-  border: 1px solid grey;
-  color: black;
-  min-height: 3rem;
-  margin-bottom: 30px;
-}
-.contactForm textarea {
-  height: 10rem;
-  background-color: white;
-  outline: none;
-  border: 1px solid grey;
-  color: black;
-}
-.inputContainer {
-  margin: 2rem;
-  margin-bottom: 0;
-  display: flex;
-  flex-direction: column;
-}
-.buttonContainer button {
-  margin: 2rem;
-  background-color: rgb(5, 50, 124);
-  color: #fff;
-  border: 2px solid grey;
-  height: 3rem;
-  width: 6rem;
-  font-size: 20px;
-}
-.buttonContainer button:hover {
-  background-color: rgb(8, 5, 67);
+  background-color: #041838;
 }
 .csePage {
+  background-color: #041838;
+  color: #08c7ba;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -5,39 +5,10 @@ import { Grid, Typography } from "@material-ui/core";
 
 import { scienceProgramsData } from "../evaluateComponents/data2";
 
-const HSCPrograms = ({ hscScore }) => {
+const HSCPrograms = ({ scoreStatus }) => {
   const [state, setState] = useContext(Context);
 
-  function getStatus(hscScore) {
-    switch (true) {
-      case 0 <= hscScore && hscScore < 50:
-        return "none";
-      case 50 <= hscScore && hscScore < 55:
-        return "very bad";
-
-      case 55 <= hscScore && hscScore < 60:
-        return "bad";
-      case 60 <= hscScore && hscScore <= 65:
-        return "good";
-      case 65 <= hscScore && hscScore <= 70:
-        return "very good";
-      case 70 <= hscScore && hscScore <= 75:
-        return "best";
-      case 75 <= hscScore && hscScore <= 80:
-        return "excellent";
-      case 80 <= hscScore && hscScore <= 85:
-        return "star";
-      case 85 <= hscScore && hscScore <= 90:
-        return "super";
-      case 90 <= hscScore && hscScore <= 95:
-        return "brilliant";
-      case 95 <= hscScore && hscScore <= 100:
-        return "perfect";
-    }
-  }
-
-  const scoreStatus = getStatus(hscScore);
-
+ 
   const scholarships = scienceProgramsData
     .find((item) => item.score === scoreStatus)
     ?.scholarships.map((scholarship) => (
@@ -72,7 +43,7 @@ const HSCPrograms = ({ hscScore }) => {
               <Typography
                 style={{
                   padding: "20px 10px",
-                  color: "black",
+                  color: "#08c7ba",
                   fontWeight: "bold",
                 }}
                 variant="h6"
@@ -84,7 +55,7 @@ const HSCPrograms = ({ hscScore }) => {
               <Typography
                 style={{
                   padding: "20px 10px",
-                  color: "black",
+                  color: "#08c7ba",
                   fontWeight: "bold",
                 }}
                 align="center"
@@ -101,7 +72,7 @@ const HSCPrograms = ({ hscScore }) => {
               <Typography
                 style={{
                   padding: "20px 10px",
-                  color: "black",
+                  color: "#08c7ba",
                   fontWeight: "bold",
                 }}
                 variant="h6"
@@ -112,7 +83,7 @@ const HSCPrograms = ({ hscScore }) => {
               <Typography
                 style={{
                   padding: "20px 10px",
-                  color: "black",
+                  color: "#08c7ba",
                   fontWeight: "bold",
                 }}
               >
@@ -126,7 +97,7 @@ const HSCPrograms = ({ hscScore }) => {
                 <Typography
                   style={{
                     padding: "20px 10px",
-                    color: "black",
+                    color: "#08c7ba",
                     fontWeight: "bold",
                   }}
                   variant="h6"
@@ -137,7 +108,7 @@ const HSCPrograms = ({ hscScore }) => {
                 <Typography
                   style={{
                     padding: "20px 10px",
-                    color: "black",
+                    color: "#08c7ba",
                     fontWeight: "bold",
                   }}
                 >
@@ -150,7 +121,7 @@ const HSCPrograms = ({ hscScore }) => {
               <Typography
                 style={{
                   padding: "20px 10px",
-                  color: "black",
+                  color: "#08c7ba",
                   fontWeight: "bold",
                 }}
                 variant="h6"
@@ -163,6 +134,7 @@ const HSCPrograms = ({ hscScore }) => {
                 <div className="select-wrapper">
                   <Grid container>
                     <select
+                      style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
                       required
                       className="formSelect"
                       id="program"
@@ -185,7 +157,7 @@ const HSCPrograms = ({ hscScore }) => {
                 <Link href="/apply">
                   <button
                     disableRipple
-                    className="nextBackButton"
+                    className="upbtn"
                     type="submit"
                   >
                     Continue

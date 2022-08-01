@@ -18,19 +18,15 @@ const Apply = () => {
     user_name: "",
     user_email: "",
     message: "",
-    fatherName: "",
-    motherName: "",
     mobile: "",
     address: "",
-    program: state.program,
+    program: state?.program,
   };
   const [userData, setUserData] = useState(initialState);
   const {
     user_name,
     user_email,
     message,
-    fatherName,
-    motherName,
     address,
     mobile,
     program,
@@ -41,7 +37,7 @@ const Apply = () => {
     setUserData({ ...userData, [name]: value });
   };
   const [progress, setProgress] = useState(false);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
 
   const form = useRef();
 
@@ -75,171 +71,84 @@ const Apply = () => {
         <>
           {!visible ? (
             <>
-              <Typography
-                style={{
-                  fontSize: "25px",
-                  margin: "2rem",
-                  fontWeight: "bold",
-                  color: "black",
-                }}
-                align="center"
-              >
-                Application Form
-              </Typography>
-              <Grid>
-                <Card
-                  style={{
-                    maxWidth: 450,
-                    padding: "20px 5px",
-                    margin: "0 auto",
-                    marginBottom: "4rem",
-                  }}
-                >
-                  <CardContent>
-                    <form ref={form} onSubmit={sendEmail}>
-                      <Grid container spacing={3}>
-                        <Grid item xs={12}>
-                          <TextField
-                            type="text"
-                            placeholder="Enter your full name"
-                            label="Your Full Name"
-                            variant="outlined"
-                            fullWidth
-                            required
-                            id="user_name"
-                            name="user_name"
-                            value={user_name}
-                            onChange={handleChangeInput}
+              
+             
+              
+                    <div className='applyContainer'>
+                        <form className='box' ref={form} onSubmit={sendEmail}>
+                          <h3>Apply</h3>
+                          <input 
+                          type="text"
+                          placeholder="Enter your full name"
+                          fullWidth
+                          required
+                          id="user_name"
+                          name="user_name"
+                          value={user_name}
+                          onChange={handleChangeInput}
                           />
-                        </Grid>
-                        <div className="d-none">
-                          <Grid item xs={12}>
-                            <TextField
-                              type="text"
-                              placeholder="Enter your full name"
-                              label="Your Full Name"
-                              variant="outlined"
-                              fullWidth
-                              id="program"
-                              name="program"
-                              value={program}
-                              onChange={handleChangeInput}
-                            />
-                          </Grid>
-                        </div>
-                        <Grid item xs={12}>
-                          <TextField
-                            type="email"
-                            placeholder="Enter your email address"
-                            label="Email"
-                            variant="outlined"
-                            fullWidth
-                            required
-                            id="user_email"
-                            name="user_email"
-                            value={user_email}
-                            onChange={handleChangeInput}
+                          <input 
+                          className="d-none"
+                          type="text"
+                          id="program"
+                          name="program"
+                          value={program}
+                          onChange={handleChangeInput} 
                           />
-                        </Grid>
-                        <Grid item xs={12}>
-                          <TextField
-                            type="text"
-                            placeholder="Enter your father's name"
-                            label="Father's Name"
-                            variant="outlined"
-                            fullWidth
-                            required
-                            id="fatherName"
-                            name="fatherName"
-                            value={fatherName}
-                            onChange={handleChangeInput}
+                          
+                          <input
+                          type="email"
+                          placeholder="Enter your email"
+                          required
+                          id="user_email"
+                          name="user_email"
+                          value={user_email}
+                          onChange={handleChangeInput}
                           />
-                        </Grid>
-                        <Grid item xs={12}>
-                          <TextField
-                            type="text"
-                            placeholder="Enter your mother's name"
-                            label="Mother's Name"
-                            variant="outlined"
-                            fullWidth
-                            required
-                            id="motherName"
-                            name="motherName"
-                            value={motherName}
-                            onChange={handleChangeInput}
+                          <input 
+                          placeholder="Enter your address"
+                          type="text"
+                          required
+                          id="address"
+                          name="address"
+                          value={address}
+                          onChange={handleChangeInput}
                           />
-                        </Grid>
-                        <Grid item xs={12}>
-                          <TextField
-                            placeholder="Enter your address"
-                            type="text"
-                            label="Address"
-                            variant="outlined"
-                            fullWidth
-                            required
-                            id="address"
-                            name="address"
-                            value={address}
-                            onChange={handleChangeInput}
+                          <input
+                          type="number"
+                          placeholder="Enter your mobile number"
+                          required
+                          id="mobile"
+                          name="mobile"
+                          value={mobile}
+                          onChange={handleChangeInput}
                           />
-                        </Grid>
-                        <Grid item xs={12}>
-                          <TextField
-                            type="number"
-                            placeholder="Enter your mobile number"
-                            label="Mobile No"
-                            variant="outlined"
-                            fullWidth
-                            required
-                            id="mobile"
-                            name="mobile"
-                            value={mobile}
-                            onChange={handleChangeInput}
+                          <textarea
+                          type="text"
+                          placeholder="Statement of purpose."
+                          required
+                          id="message"
+                          name="message"
+                          value={message}
+                          onChange={handleChangeInput}
                           />
-                        </Grid>
-
-                        <Grid item xs={12}>
-                          <TextField
-                            type="text"
-                            placeholder="Briefly describe your statement of purpose."
-                            label="Statement of Purpose"
-                            variant="outlined"
-                            fullWidth
-                            required
-                            multiline
-                            minRows={10}
-                            id="message"
-                            name="message"
-                            value={message}
-                            onChange={handleChangeInput}
-                          />
-                        </Grid>
-
-                        <Grid item xs={12}>
-                          <button
-                            type="submit"
-                            value="Send"
-                            className="nextBackButton"
-                          >
-                            Submit
-                          </button>
-                        </Grid>
-                      </Grid>
-                    </form>
-                  </CardContent>
-                </Card>
-              </Grid>
+                         
+                          <button type='submit' value='send'>Submit </button>
+                        </form>
+                    </div>
+              
+              
             </>
           ) : (
             <>
-              {state.program === "Computer Science and Engineering" ? (
+              {state?.program === "Computer Science and Engineering" ? (
                 <>
                   <Typography
                     style={{
                       fontSize: "25px",
                       margin: "2rem",
                       fontWeight: "bold",
-                      color: "black",
+                      color: "#08c7ba",
                     }}
                     align="center"
                   >
@@ -255,14 +164,16 @@ const Apply = () => {
                         display: "flex",
                         flexDirection: "column",
                         justifyItems: "center",
+                        backgroundColor:"#052252",
+                        color: '#08c7ba',
                       }}
                     >
                       <CardContent>
                         <Typography
                           style={{
                             fontWeight: "bold",
-                            color: "black",
-                            fontSize: "20px",
+                            
+                            fontSize: "19px",
                           }}
                         >
                           We will let you know if your application is granted by
@@ -271,8 +182,8 @@ const Apply = () => {
                         <Typography
                           style={{
                             fontWeight: "bold",
-                            color: "black",
-                            fontSize: "20px",
+                            
+                            fontSize: "19px",
                             marginTop: "4rem",
                           }}
                         >
@@ -282,7 +193,7 @@ const Apply = () => {
                       </CardContent>
                       <div className="col d-flex align-items-center justify-content-center my-3">
                         <Link href="/courses">
-                          <button className="nextBackButton">Continue</button>
+                          <button className='upbtn'>Continue</button>
                         </Link>
                       </div>
                     </Card>
@@ -295,7 +206,7 @@ const Apply = () => {
                       fontSize: "25px",
                       margin: "2rem",
                       fontWeight: "bold",
-                      color: "black",
+                      color: "#08c7ba",
                     }}
                     align="center"
                   >
@@ -308,14 +219,16 @@ const Apply = () => {
                         maxWidth: 450,
                         padding: "20px 5px",
                         margin: "4rem auto",
+                        backgroundColor:"#052252",
+                        color:'#08c7ba',
                       }}
                     >
                       <CardContent>
                         <Typography
                           style={{
                             fontWeight: "bold",
-                            color: "black",
-                            fontSize: "20px",
+                            
+                            fontSize: "19px",
                           }}
                         >
                           We will let you know if your application is granted by
@@ -324,7 +237,7 @@ const Apply = () => {
                       </CardContent>
                       <div className="col d-flex align-items-center justify-content-center my-3">
                         <Link href="/">
-                          <button className="nextBackButton">
+                          <button className='upbtn'>
                             Back to Home
                           </button>
                         </Link>

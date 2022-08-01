@@ -1,7 +1,9 @@
 import { yearData, boardData, facultyData } from "./data2";
+import { toast } from 'react-toastify';
 import { Grid, Typography } from "@material-ui/core";
+import valid from '../utils/valid'
 
-const Academics = ({ userData, setUserData }) => {
+const Academics = ({setToggleState, userData, setUserData }) => {
   const {
     study_level,
     bachelors_result,
@@ -44,10 +46,15 @@ const Academics = ({ userData, setUserData }) => {
     </option>
   ));
 
+  
+
   const handleInput = (e) => {
     const { name, value } = e.target;
     setUserData({ ...userData, [name]: value });
   };
+   
+  
+
 
   function getFormComponent(study_level) {
     switch (study_level) {
@@ -61,6 +68,7 @@ const Academics = ({ userData, setUserData }) => {
               <div className="select-wrapper">
                 <Grid container>
                   <select
+                    style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
                     required
                     className="formSelect"
                     id="ssc_group"
@@ -69,8 +77,8 @@ const Academics = ({ userData, setUserData }) => {
                     type="text"
                     onChange={handleInput}
                   >
-                    <option value="" disabled selected="selected">
-                      SSC group
+                    <option>
+                      please choose...
                     </option>
                     <option value="Science">Science</option>
                     <option value="Arts">Arts</option>
@@ -83,14 +91,16 @@ const Academics = ({ userData, setUserData }) => {
               <h6> SSC GPA: *</h6>
               <Grid container>
                 <input
-                  rows="2"
+                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                 placeholder=""
                   required
                   className="inputEvaluate"
                   id="ssc_result"
                   name="ssc_result"
                   value={ssc_result}
                   type="number"
-                  onChange={handleInput}
+                  
+                  onChange={(e) => setUserData({...userData, ssc_result: parseFloat(e.target.value)})}
                 />
               </Grid>
             </div>
@@ -98,7 +108,8 @@ const Academics = ({ userData, setUserData }) => {
               <h6> SSC Roll: *</h6>
               <Grid container>
                 <input
-                  rows="2"
+                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                 placeholder=""
                   required
                   className="inputEvaluate"
                   id="ssc_roll"
@@ -113,7 +124,8 @@ const Academics = ({ userData, setUserData }) => {
               <h6> SSC Registration Number: *</h6>
               <Grid container>
                 <input
-                  rows="2"
+                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                 placeholder=""
                   required
                   className="inputEvaluate"
                   id="ssc_reg"
@@ -129,6 +141,7 @@ const Academics = ({ userData, setUserData }) => {
               <div className="select-wrapper">
                 <Grid container>
                   <select
+                    style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
                     required
                     className="formSelect"
                     id="ssc_board"
@@ -137,8 +150,8 @@ const Academics = ({ userData, setUserData }) => {
                     type="text"
                     onChange={handleInput}
                   >
-                    <option value="" disabled selected>
-                      SSC board
+                    <option>
+                      please choose...
                     </option>
                     {boards}
                   </select>
@@ -150,6 +163,7 @@ const Academics = ({ userData, setUserData }) => {
               <div className="select-wrapper">
                 <Grid container>
                   <select
+                    style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
                     required
                     className="formSelect"
                     id="ssc_pyear"
@@ -158,8 +172,8 @@ const Academics = ({ userData, setUserData }) => {
                     type="number"
                     onChange={handleInput}
                   >
-                    <option value="" disabled selected>
-                      SSC passing year
+                    <option>
+                      please choose...
                     </option>
                     {years}
                   </select>
@@ -174,6 +188,7 @@ const Academics = ({ userData, setUserData }) => {
               <div className="select-wrapper">
                 <Grid container>
                   <select
+                    style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
                     required
                     className="formSelect"
                     id="faculty_name"
@@ -182,7 +197,7 @@ const Academics = ({ userData, setUserData }) => {
                     type="text"
                     onChange={handleInput}
                   >
-                    <option value="" disabled selected>
+                    <option>
                       Please select...
                     </option>
                     <option value="Faculty of Engineering">
@@ -203,6 +218,7 @@ const Academics = ({ userData, setUserData }) => {
               <div className="select-wrapper">
                 <Grid container>
                   <select
+                    style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
                     required
                     className="formSelect"
                     id="ssc_group"
@@ -211,8 +227,8 @@ const Academics = ({ userData, setUserData }) => {
                     type="text"
                     onChange={handleInput}
                   >
-                    <option value="" disabled selected="selected">
-                      SSC group
+                    <option>
+                      please select...
                     </option>
                     <option value="Science">Science</option>
                     <option value="Arts">Arts</option>
@@ -225,7 +241,8 @@ const Academics = ({ userData, setUserData }) => {
               <h6> SSC GPA: *</h6>
               <Grid container>
                 <input
-                  rows="2"
+                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                 placeholder=""
                   required
                   className="inputEvaluate"
                   id="ssc_result"
@@ -240,7 +257,8 @@ const Academics = ({ userData, setUserData }) => {
               <h6> SSC Roll: *</h6>
               <Grid container>
                 <input
-                  rows="2"
+                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                 placeholder=""
                   required
                   className="inputEvaluate"
                   id="ssc_roll"
@@ -255,7 +273,8 @@ const Academics = ({ userData, setUserData }) => {
               <h6> SSC Registration Number: *</h6>
               <Grid container>
                 <input
-                  rows="2"
+                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                 placeholder=""
                   required
                   className="inputEvaluate"
                   id="ssc_reg"
@@ -271,6 +290,7 @@ const Academics = ({ userData, setUserData }) => {
               <div className="select-wrapper">
                 <Grid container>
                   <select
+                    style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
                     required
                     className="formSelect"
                     id="ssc_board"
@@ -279,8 +299,8 @@ const Academics = ({ userData, setUserData }) => {
                     type="text"
                     onChange={handleInput}
                   >
-                    <option value="" disabled selected>
-                      SSC board
+                    <option>
+                      please select...
                     </option>
                     {boards}
                   </select>
@@ -292,6 +312,7 @@ const Academics = ({ userData, setUserData }) => {
               <div className="select-wrapper">
                 <Grid container>
                   <select
+                    style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
                     required
                     className="formSelect"
                     id="ssc_pyear"
@@ -300,8 +321,8 @@ const Academics = ({ userData, setUserData }) => {
                     type="number"
                     onChange={handleInput}
                   >
-                    <option value="" disabled selected>
-                      SSC passing year
+                    <option>
+                      please select...
                     </option>
                     {years}
                   </select>
@@ -313,6 +334,7 @@ const Academics = ({ userData, setUserData }) => {
               <div className="select-wrapper">
                 <Grid container>
                   <select
+                    style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
                     required
                     className="formSelect"
                     id="hsc_group"
@@ -321,8 +343,8 @@ const Academics = ({ userData, setUserData }) => {
                     type="text"
                     onChange={handleInput}
                   >
-                    <option value="" disabled selected="selected">
-                      HSC group
+                    <option>
+                      please select...
                     </option>
                     <option value="Science">Science</option>
                     <option value="Arts">Arts</option>
@@ -335,7 +357,8 @@ const Academics = ({ userData, setUserData }) => {
               <h6> HSC GPA: *</h6>
               <Grid container>
                 <input
-                  rows="2"
+                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                 placeholder=""
                   required
                   className="inputEvaluate"
                   id="hsc_result"
@@ -350,7 +373,8 @@ const Academics = ({ userData, setUserData }) => {
               <h6> HSC Roll: *</h6>
               <Grid container>
                 <input
-                  rows="2"
+                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                 placeholder=""
                   required
                   className="inputEvaluate"
                   id="hsc_roll"
@@ -365,7 +389,8 @@ const Academics = ({ userData, setUserData }) => {
               <h6> HSC Registration Number: *</h6>
               <Grid container>
                 <input
-                  rows="2"
+                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                 placeholder=""
                   required
                   className="inputEvaluate"
                   id="hsc_reg"
@@ -381,6 +406,7 @@ const Academics = ({ userData, setUserData }) => {
               <div className="select-wrapper">
                 <Grid container>
                   <select
+                    style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
                     required
                     className="formSelect"
                     id="hsc_board"
@@ -389,8 +415,8 @@ const Academics = ({ userData, setUserData }) => {
                     type="text"
                     onChange={handleInput}
                   >
-                    <option value="" disabled selected>
-                      HSC board
+                    <option>
+                      please select...
                     </option>
                     {boards}
                   </select>
@@ -402,6 +428,7 @@ const Academics = ({ userData, setUserData }) => {
               <div className="select-wrapper">
                 <Grid container>
                   <select
+                    style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
                     required
                     className="formSelect"
                     id="hsc_pyear"
@@ -410,8 +437,8 @@ const Academics = ({ userData, setUserData }) => {
                     type="number"
                     onChange={handleInput}
                   >
-                    <option value="" disabled selected>
-                      HSC passing year
+                    <option>
+                      please select...
                     </option>
                     {years}
                   </select>
@@ -426,6 +453,7 @@ const Academics = ({ userData, setUserData }) => {
               <div className="select-wrapper">
                 <Grid container>
                   <select
+                    style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
                     required
                     className="formSelect"
                     id="faculty_name"
@@ -434,7 +462,7 @@ const Academics = ({ userData, setUserData }) => {
                     type="text"
                     onChange={handleInput}
                   >
-                    <option value="" disabled selected>
+                    <option>
                       Please select...
                     </option>
                     {faculties}
@@ -452,6 +480,7 @@ const Academics = ({ userData, setUserData }) => {
               <div className="select-wrapper">
                 <Grid container>
                   <select
+                    style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
                     required
                     className="formSelect"
                     id="ssc_group"
@@ -460,8 +489,8 @@ const Academics = ({ userData, setUserData }) => {
                     type="text"
                     onChange={handleInput}
                   >
-                    <option value="" disabled selected="selected">
-                      SSC group
+                    <option>
+                      please select...
                     </option>
                     <option value="Science">Science</option>
                     <option value="Arts">Arts</option>
@@ -474,7 +503,8 @@ const Academics = ({ userData, setUserData }) => {
               <h6> Enter your SSC GPA *</h6>
               <Grid container>
                 <input
-                  rows="2"
+                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                 placeholder=""
                   required
                   className="inputEvaluate"
                   id="ssc_result"
@@ -489,7 +519,8 @@ const Academics = ({ userData, setUserData }) => {
               <h6> Enter your SSC Roll *</h6>
               <Grid container>
                 <input
-                  rows="2"
+                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                 placeholder=""
                   required
                   className="inputEvaluate"
                   id="ssc_roll"
@@ -504,7 +535,8 @@ const Academics = ({ userData, setUserData }) => {
               <h6> Enter your SSC registration number *</h6>
               <Grid container>
                 <input
-                  rows="2"
+                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                 placeholder=""
                   required
                   className="inputEvaluate"
                   id="ssc_reg"
@@ -520,6 +552,7 @@ const Academics = ({ userData, setUserData }) => {
               <div className="select-wrapper">
                 <Grid container>
                   <select
+                    style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
                     required
                     className="formSelect"
                     id="ssc_board"
@@ -528,8 +561,8 @@ const Academics = ({ userData, setUserData }) => {
                     type="text"
                     onChange={handleInput}
                   >
-                    <option value="" disabled selected>
-                      SSC board
+                    <option>
+                      please select...
                     </option>
                     {boards}
                   </select>
@@ -541,6 +574,7 @@ const Academics = ({ userData, setUserData }) => {
               <div className="select-wrapper">
                 <Grid container>
                   <select
+                    style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
                     required
                     className="formSelect"
                     id="ssc_pyear"
@@ -549,8 +583,8 @@ const Academics = ({ userData, setUserData }) => {
                     type="number"
                     onChange={handleInput}
                   >
-                    <option value="" disabled selected>
-                      SSC passing year
+                    <option>
+                      please select...
                     </option>
                     {years}
                   </select>
@@ -561,7 +595,8 @@ const Academics = ({ userData, setUserData }) => {
               <h6> What was your department? *</h6>
               <Grid container>
                 <input
-                  rows="2"
+                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                 placeholder=""
                   required
                   className="inputEvaluate"
                   id="diploma_dept"
@@ -576,7 +611,8 @@ const Academics = ({ userData, setUserData }) => {
               <h6> Enter your GPA *</h6>
               <Grid container>
                 <input
-                  rows="2"
+                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                 placeholder=""
                   required
                   className="inputEvaluate"
                   id="diploma_result"
@@ -591,7 +627,8 @@ const Academics = ({ userData, setUserData }) => {
               <h6> Institute Name: *</h6>
               <Grid container>
                 <input
-                  rows="2"
+                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                 placeholder=""
                   required
                   className="inputEvaluate"
                   id="diploma_institute"
@@ -607,6 +644,7 @@ const Academics = ({ userData, setUserData }) => {
               <div className="select-wrapper">
                 <Grid container>
                   <select
+                    style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
                     required
                     className="formSelect"
                     id="diploma_pyear"
@@ -615,7 +653,7 @@ const Academics = ({ userData, setUserData }) => {
                     type="number"
                     onChange={handleInput}
                   >
-                    <option value="" disabled selected>
+                    <option>
                       Please choose...
                     </option>
                     {years}
@@ -631,6 +669,7 @@ const Academics = ({ userData, setUserData }) => {
               <div className="select-wrapper">
                 <Grid container>
                   <select
+                    style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
                     required
                     className="formSelect"
                     id="faculty_name"
@@ -639,7 +678,7 @@ const Academics = ({ userData, setUserData }) => {
                     type="text"
                     onChange={handleInput}
                   >
-                    <option value="" disabled selected>
+                    <option>
                       Please select...
                     </option>
                     {faculties}
@@ -657,6 +696,7 @@ const Academics = ({ userData, setUserData }) => {
               <div className="select-wrapper">
                 <Grid container>
                   <select
+                    style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
                     required
                     className="formSelect"
                     id="ssc_group"
@@ -665,8 +705,8 @@ const Academics = ({ userData, setUserData }) => {
                     type="text"
                     onChange={handleInput}
                   >
-                    <option value="" disabled selected="selected">
-                      SSC group
+                    <option>
+                      please select...
                     </option>
                     <option value="Science">Science</option>
                     <option value="Arts">Arts</option>
@@ -679,7 +719,8 @@ const Academics = ({ userData, setUserData }) => {
               <h6> SSC GPA: *</h6>
               <Grid container>
                 <input
-                  rows="2"
+                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                 placeholder=""
                   required
                   className="inputEvaluate"
                   id="ssc_result"
@@ -694,7 +735,8 @@ const Academics = ({ userData, setUserData }) => {
               <h6> SSC Roll: *</h6>
               <Grid container>
                 <input
-                  rows="2"
+                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                 placeholder=""
                   required
                   className="inputEvaluate"
                   id="ssc_roll"
@@ -709,7 +751,8 @@ const Academics = ({ userData, setUserData }) => {
               <h6> SSC Registration Number: *</h6>
               <Grid container>
                 <input
-                  rows="2"
+                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                 placeholder=""
                   required
                   className="inputEvaluate"
                   id="ssc_reg"
@@ -725,6 +768,7 @@ const Academics = ({ userData, setUserData }) => {
               <div className="select-wrapper">
                 <Grid container>
                   <select
+                    style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
                     required
                     className="formSelect"
                     id="ssc_board"
@@ -733,8 +777,8 @@ const Academics = ({ userData, setUserData }) => {
                     type="text"
                     onChange={handleInput}
                   >
-                    <option value="" disabled selected>
-                      SSC board
+                    <option>
+                      please select...
                     </option>
                     {boards}
                   </select>
@@ -746,6 +790,7 @@ const Academics = ({ userData, setUserData }) => {
               <div className="select-wrapper">
                 <Grid container>
                   <select
+                    style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
                     required
                     className="formSelect"
                     id="ssc_pyear"
@@ -754,8 +799,8 @@ const Academics = ({ userData, setUserData }) => {
                     type="number"
                     onChange={handleInput}
                   >
-                    <option value="" disabled selected>
-                      SSC passing year
+                    <option>
+                      please select...
                     </option>
                     {years}
                   </select>
@@ -767,6 +812,7 @@ const Academics = ({ userData, setUserData }) => {
               <div className="select-wrapper">
                 <Grid container>
                   <select
+                    style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
                     required
                     className="formSelect"
                     id="hsc_group"
@@ -775,8 +821,8 @@ const Academics = ({ userData, setUserData }) => {
                     type="text"
                     onChange={handleInput}
                   >
-                    <option value="" disabled selected="selected">
-                      HSC group
+                    <option>
+                      please select...
                     </option>
                     <option value="Science">Science</option>
                     <option value="Arts">Arts</option>
@@ -789,7 +835,8 @@ const Academics = ({ userData, setUserData }) => {
               <h6> HSC GPA: *</h6>
               <Grid container>
                 <input
-                  rows="2"
+                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                 placeholder=""
                   required
                   className="inputEvaluate"
                   id="hsc_result"
@@ -804,7 +851,8 @@ const Academics = ({ userData, setUserData }) => {
               <h6> HSC Roll: *</h6>
               <Grid container>
                 <input
-                  rows="2"
+                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                 placeholder=""
                   required
                   className="inputEvaluate"
                   id="hsc_roll"
@@ -819,7 +867,8 @@ const Academics = ({ userData, setUserData }) => {
               <h6> HSC Registration Number: *</h6>
               <Grid container>
                 <input
-                  rows="2"
+                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                 placeholder=""
                   required
                   className="inputEvaluate"
                   id="hsc_reg"
@@ -835,6 +884,7 @@ const Academics = ({ userData, setUserData }) => {
               <div className="select-wrapper">
                 <Grid container>
                   <select
+                    style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
                     required
                     className="formSelect"
                     id="hsc_board"
@@ -843,8 +893,8 @@ const Academics = ({ userData, setUserData }) => {
                     type="text"
                     onChange={handleInput}
                   >
-                    <option value="" disabled selected>
-                      HSC board
+                    <option>
+                      please select...
                     </option>
                     {boards}
                   </select>
@@ -856,6 +906,7 @@ const Academics = ({ userData, setUserData }) => {
               <div className="select-wrapper">
                 <Grid container>
                   <select
+                    style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
                     required
                     className="formSelect"
                     id="hsc_pyear"
@@ -864,8 +915,8 @@ const Academics = ({ userData, setUserData }) => {
                     type="number"
                     onChange={handleInput}
                   >
-                    <option value="" disabled selected>
-                      HSC passing year
+                    <option>
+                      please select...
                     </option>
                     {years}
                   </select>
@@ -876,7 +927,8 @@ const Academics = ({ userData, setUserData }) => {
               <h6> What was your department? *</h6>
               <Grid container>
                 <input
-                  rows="2"
+                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                 placeholder=""
                   required
                   className="inputEvaluate"
                   id="bachelors_dept"
@@ -891,7 +943,8 @@ const Academics = ({ userData, setUserData }) => {
               <h6> Enter your GPA *</h6>
               <Grid container>
                 <input
-                  rows="2"
+                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                 placeholder=""
                   required
                   className="inputEvaluate"
                   id="bachelors_result"
@@ -906,7 +959,8 @@ const Academics = ({ userData, setUserData }) => {
               <h6> Institute Name: *</h6>
               <Grid container>
                 <input
-                  rows="2"
+                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                  
                   required
                   className="inputEvaluate"
                   id="bachelors_institute"
@@ -922,6 +976,7 @@ const Academics = ({ userData, setUserData }) => {
               <div className="select-wrapper">
                 <Grid container>
                   <select
+                    style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
                     required
                     className="formSelect"
                     id="bachelors_pyear"
@@ -930,7 +985,7 @@ const Academics = ({ userData, setUserData }) => {
                     type="number"
                     onChange={handleInput}
                   >
-                    <option value="" disabled selected>
+                    <option>
                       Please choose...
                     </option>
                     {years}
@@ -946,6 +1001,7 @@ const Academics = ({ userData, setUserData }) => {
               <div className="select-wrapper">
                 <Grid container>
                   <select
+                    style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
                     required
                     className="formSelect"
                     id="faculty_name"
@@ -954,7 +1010,7 @@ const Academics = ({ userData, setUserData }) => {
                     type="text"
                     onChange={handleInput}
                   >
-                    <option value="" disabled selected>
+                    <option>
                       Please select...
                     </option>
                     {faculties}
@@ -968,11 +1024,23 @@ const Academics = ({ userData, setUserData }) => {
         return "";
     }
   }
+  const handleNext = () => {
+    const errMsg = valid(ssc_result, hsc_result, diploma_result, bachelors_result)
+    if (errMsg) return toast.error(errMsg, {
+      autoClose: 2000,
+    })
+    setToggleState((prevActiveStep) => prevActiveStep + 1)
+    toast.success('Great! now show your extra-curricular activities!', {
+      autoClose: 2000,
+      
+    })
+    
+  }
 
   return (
-    <div>
+    <div style={{background:'#052252'}}>
       <Typography
-        style={{ padding: "20px 10px", color: "black", fontWeight: "bold" }}
+        style={{ padding: "20px 10px", color: "#08c7ba", fontWeight: "bold" }}
         variant="h6"
         align="center"
       >
@@ -983,6 +1051,7 @@ const Academics = ({ userData, setUserData }) => {
         <div className="select-wrapper">
           <Grid container>
             <select
+              style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
               required
               className="formSelect"
               id="eduMedium"
@@ -990,7 +1059,7 @@ const Academics = ({ userData, setUserData }) => {
               value={study_level}
               onChange={handleInput}
             >
-              <option value="" selected disabled>
+              <option>
                 Please select...
               </option>
               <option value="Under SSC">Under SSC</option>
@@ -1003,6 +1072,9 @@ const Academics = ({ userData, setUserData }) => {
         </div>
       </div>
       {getFormComponent(study_level)}
+      <div className="d-flex justify-content-between  mx-3 my-5">
+              <button className='upbtn' onClick={handleNext}>Next</button>
+      </div>
     </div>
   );
 };

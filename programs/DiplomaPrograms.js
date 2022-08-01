@@ -5,38 +5,10 @@ import { Grid, Typography } from "@material-ui/core";
 
 import { scienceProgramsData } from "../evaluateComponents/data2";
 
-const DiplomaPrograms = ({ diplomaScore }) => {
+const DiplomaPrograms = ({ scoreStatus }) => {
   const [state, setState] = useContext(Context);
 
-  function getStatus(diplomaScore) {
-    switch (true) {
-      case 0 <= diplomaScore && diplomaScore < 50:
-        return "none";
-      case 50 <= diplomaScore && diplomaScore < 55:
-        return "very bad";
-
-      case 55 <= diplomaScore && diplomaScore < 60:
-        return "bad";
-      case 60 <= diplomaScore && diplomaScore <= 65:
-        return "good";
-      case 65 <= diplomaScore && diplomaScore <= 70:
-        return "very good";
-      case 70 <= diplomaScore && diplomaScore <= 75:
-        return "best";
-      case 75 <= diplomaScore && diplomaScore <= 80:
-        return "excellent";
-      case 80 <= diplomaScore && diplomaScore <= 85:
-        return "star";
-      case 85 <= diplomaScore && diplomaScore <= 90:
-        return "super";
-      case 90 <= diplomaScore && diplomaScore <= 95:
-        return "brilliant";
-      case 95 <= diplomaScore && diplomaScore <= 100:
-        return "perfect";
-    }
-  }
-
-  const scoreStatus = getStatus(diplomaScore);
+ 
 
   const scholarships = scienceProgramsData
     .find((item) => item.score === scoreStatus)
@@ -72,7 +44,7 @@ const DiplomaPrograms = ({ diplomaScore }) => {
               <Typography
                 style={{
                   padding: "20px 10px",
-                  color: "black",
+                  color: "#08c7ba",
                   fontWeight: "bold",
                 }}
                 variant="h6"
@@ -84,7 +56,7 @@ const DiplomaPrograms = ({ diplomaScore }) => {
               <Typography
                 style={{
                   padding: "20px 10px",
-                  color: "black",
+                  color: "#08c7ba",
                   fontWeight: "bold",
                 }}
                 align="center"
@@ -101,7 +73,7 @@ const DiplomaPrograms = ({ diplomaScore }) => {
               <Typography
                 style={{
                   padding: "20px 10px",
-                  color: "black",
+                  color: "#08c7ba",
                   fontWeight: "bold",
                 }}
                 variant="h6"
@@ -112,7 +84,7 @@ const DiplomaPrograms = ({ diplomaScore }) => {
               <Typography
                 style={{
                   padding: "20px 10px",
-                  color: "black",
+                  color: "#08c7ba",
                   fontWeight: "bold",
                 }}
               >
@@ -126,7 +98,7 @@ const DiplomaPrograms = ({ diplomaScore }) => {
                 <Typography
                   style={{
                     padding: "20px 10px",
-                    color: "black",
+                    color: "#08c7ba",
                     fontWeight: "bold",
                   }}
                   variant="h6"
@@ -137,7 +109,7 @@ const DiplomaPrograms = ({ diplomaScore }) => {
                 <Typography
                   style={{
                     padding: "20px 10px",
-                    color: "black",
+                    color: "#08c7ba",
                     fontWeight: "bold",
                   }}
                 >
@@ -150,7 +122,7 @@ const DiplomaPrograms = ({ diplomaScore }) => {
               <Typography
                 style={{
                   padding: "20px 10px",
-                  color: "black",
+                  color: "#08c7ba",
                   fontWeight: "bold",
                 }}
                 variant="h6"
@@ -163,6 +135,7 @@ const DiplomaPrograms = ({ diplomaScore }) => {
                 <div className="select-wrapper">
                   <Grid container>
                     <select
+                     style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
                       required
                       className="formSelect"
                       id="program"
@@ -185,7 +158,7 @@ const DiplomaPrograms = ({ diplomaScore }) => {
                 <Link href="/apply">
                   <button
                     disableRipple
-                    className="nextBackButton"
+                    className="upbtn"
                     type="submit"
                   >
                     Continue

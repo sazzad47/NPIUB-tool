@@ -5,38 +5,10 @@ import { Grid, Typography } from "@material-ui/core";
 
 import { scienceProgramsData } from "../evaluateComponents/data2";
 
-const BachelorsPrograms = ({ bachelorsScore }) => {
+const BachelorsPrograms = ({ scoreStatus }) => {
   const [state, setState] = useContext(Context);
 
-  function getStatus(bachelorsScore) {
-    switch (true) {
-      case 0 <= bachelorsScore && bachelorsScore < 50:
-        return "none";
-      case 50 <= bachelorsScore && bachelorsScore < 55:
-        return "very bad";
-
-      case 55 <= bachelorsScore && bachelorsScore < 60:
-        return "bad";
-      case 60 <= bachelorsScore && bachelorsScore <= 65:
-        return "good";
-      case 65 <= bachelorsScore && bachelorsScore <= 70:
-        return "very good";
-      case 70 <= bachelorsScore && bachelorsScore <= 75:
-        return "best";
-      case 75 <= bachelorsScore && bachelorsScore <= 80:
-        return "excellent";
-      case 80 <= bachelorsScore && bachelorsScore <= 85:
-        return "star";
-      case 85 <= bachelorsScore && bachelorsScore <= 90:
-        return "super";
-      case 90 <= bachelorsScore && bachelorsScore <= 95:
-        return "brilliant";
-      case 95 <= bachelorsScore && bachelorsScore <= 100:
-        return "perfect";
-    }
-  }
-
-  const scoreStatus = getStatus(bachelorsScore);
+ 
 
   const scholarships = scienceProgramsData
     .find((item) => item.score === scoreStatus)
@@ -72,7 +44,7 @@ const BachelorsPrograms = ({ bachelorsScore }) => {
               <Typography
                 style={{
                   padding: "20px 10px",
-                  color: "black",
+                  color: "#08c7ba",
                   fontWeight: "bold",
                 }}
                 variant="h6"
@@ -84,7 +56,7 @@ const BachelorsPrograms = ({ bachelorsScore }) => {
               <Typography
                 style={{
                   padding: "20px 10px",
-                  color: "black",
+                  color: "#08c7ba",
                   fontWeight: "bold",
                 }}
                 align="center"
@@ -101,7 +73,7 @@ const BachelorsPrograms = ({ bachelorsScore }) => {
               <Typography
                 style={{
                   padding: "20px 10px",
-                  color: "black",
+                  color: "#08c7ba",
                   fontWeight: "bold",
                 }}
                 variant="h6"
@@ -112,7 +84,7 @@ const BachelorsPrograms = ({ bachelorsScore }) => {
               <Typography
                 style={{
                   padding: "20px 10px",
-                  color: "black",
+                  color: "#08c7ba",
                   fontWeight: "bold",
                 }}
               >
@@ -126,7 +98,7 @@ const BachelorsPrograms = ({ bachelorsScore }) => {
                 <Typography
                   style={{
                     padding: "20px 10px",
-                    color: "black",
+                    color: "#08c7ba",
                     fontWeight: "bold",
                   }}
                   variant="h6"
@@ -137,7 +109,7 @@ const BachelorsPrograms = ({ bachelorsScore }) => {
                 <Typography
                   style={{
                     padding: "20px 10px",
-                    color: "black",
+                    color: "#08c7ba",
                     fontWeight: "bold",
                   }}
                 >
@@ -150,7 +122,7 @@ const BachelorsPrograms = ({ bachelorsScore }) => {
               <Typography
                 style={{
                   padding: "20px 10px",
-                  color: "black",
+                  color: "#08c7ba",
                   fontWeight: "bold",
                 }}
                 variant="h6"
@@ -163,6 +135,7 @@ const BachelorsPrograms = ({ bachelorsScore }) => {
                 <div className="select-wrapper">
                   <Grid container>
                     <select
+                     style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
                       required
                       className="formSelect"
                       id="program"
@@ -185,7 +158,7 @@ const BachelorsPrograms = ({ bachelorsScore }) => {
                 <Link href="/apply">
                   <button
                     disableRipple
-                    className="nextBackButton"
+                    className="upbtn"
                     type="submit"
                   >
                     Continue

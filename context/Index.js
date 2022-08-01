@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 const initState = {
   study_level: "",
@@ -28,13 +28,32 @@ const initState = {
   volunteerActivities: "",
   achievements: "",
   volunteerAchievements: "",
+  score:"",
   program: "",
 };
+
 
 export const Context = createContext();
 
 const Store = ({ children }) => {
-  const [state, setState] = useState(initState);
+  const [state, setState] = useState();
+  
+  useEffect(() => {
+    try {
+         if (sessionStorage.getItem('userInfo')) {
+          setState(JSON.parse(sessionStorage.getItem('userInfo')))
+         } else {
+          setState(initState)
+         }
+    } catch (error) {
+         console.log(error)
+    }
+  },['userInfo'])
+
+  useEffect(() => {
+      sessionStorage.setItem('userInfo', JSON.stringify(state))
+ },[state])
+ 
   return (
     <Context.Provider value={[state, setState]}>{children}</Context.Provider>
   );

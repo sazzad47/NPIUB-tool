@@ -134,18 +134,15 @@ export const scienceProgramsData = [
         uname: "Faculty of Engineering",
 
         programs: [
-          "Food Engineering and Technology",
-          "Electrical and Electronics Engineering",
+          
           "Computer Science and Engineering",
+          "Electrical and Electronics Engineering",
           "Textile Engineering",
           "Civil Engineering",
           "Bioengineering",
           "Electrical Engineering",
           "Environmental Science and Engineering",
           "Mechanical Engineering",
-          "Applied Physics and Applied Mathematics",
-          "Biomedical Engineering",
-          "Automobile Engineering",
           "Marine Engineering",
           "Shipbuilding Engineering",
         ],
@@ -164,6 +161,7 @@ export const scienceProgramsData = [
           "Human Resource Management",
           "Strategic Management",
           "Marketing",
+          "Research and Development"
         ],
         link: "https://www.stanford.edu/",
       },
@@ -225,6 +223,7 @@ export const scienceProgramsData = [
           "Human Resource Management",
           "Strategic Management",
           "Marketing",
+          "Research and Development"
         ],
         link: "https://www.stanford.edu/",
       },
@@ -282,6 +281,7 @@ export const scienceProgramsData = [
           "Human Resource Management",
           "Strategic Management",
           "Marketing",
+          "Research and Development"
         ],
         link: "https://www.stanford.edu/",
       },
@@ -336,6 +336,7 @@ export const scienceProgramsData = [
           "Human Resource Management",
           "Strategic Management",
           "Marketing",
+          "Research and Development"
         ],
         link: "https://www.stanford.edu/",
       },
@@ -386,6 +387,7 @@ export const scienceProgramsData = [
           "Human Resource Management",
           "Strategic Management",
           "Marketing",
+          "Research and Development"
         ],
         link: "https://www.stanford.edu/",
       },
@@ -432,6 +434,7 @@ export const scienceProgramsData = [
           "Human Resource Management",
           "Strategic Management",
           "Marketing",
+          "Research and Development"
         ],
         link: "https://www.stanford.edu/",
       },

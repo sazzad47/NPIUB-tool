@@ -1,0 +1,3 @@
+const ACTIONS = {
+    SUBMIT_INFO : 'SUBMIT_INFO'
+}

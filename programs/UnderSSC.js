@@ -6,7 +6,7 @@ const UnderSSC = () => {
       <>
         <div className="programsOffer pb-5">
           <Typography
-            style={{ padding: "20px 10px", color: "black", fontWeight: "bold" }}
+            style={{ padding: "20px 10px", color: "#08c7ba", fontWeight: "bold" }}
             variant="h6"
             align="center"
           >
@@ -14,7 +14,7 @@ const UnderSSC = () => {
           </Typography>
 
           <Typography
-            style={{ padding: "20px 10px", color: "black", fontWeight: "bold" }}
+            style={{ padding: "20px 10px", color: "#08c7ba", fontWeight: "bold" }}
             align="center"
           >
             You are not eligible to apply here.

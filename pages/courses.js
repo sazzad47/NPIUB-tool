@@ -9,9 +9,8 @@ const Courses = () => {
       <Typography
         style={{
           fontSize: "25px",
-          color: "black",
           fontWeight: "bold",
-          margin: "5rem 0.5rem",
+          padding: "5rem 0.5rem",
         }}
         align="center"
       >
@@ -20,7 +19,7 @@ const Courses = () => {
       <CourseTitleCSE />
       <Link href="/">
         <button
-          className="nextBackButton"
+          className="upbtn"
           style={{ margin: "3rem auto", marginBottom: "3rem" }}
         >
           Back to Home

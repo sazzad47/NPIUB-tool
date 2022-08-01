@@ -1,9 +1,14 @@
 import "../styles/globals.css";
 import Head from "next/head";
 import "bootstrap/dist/css/bootstrap.css";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer} from 'react-toastify';
 import Store from "../context/Index";
 
+
 function MyApp({ Component, pageProps }) {
+
+ 
   return (
     <>
       <Head>
@@ -11,6 +16,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <Store>
         <Component {...pageProps} />
+        <ToastContainer toastStyle={{ backgroundColor: "black", color:'#fff' }}/>
       </Store>
     </>
   );

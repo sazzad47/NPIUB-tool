@@ -5,38 +5,10 @@ import { Grid, Typography } from "@material-ui/core";
 
 import { scienceProgramsData } from "../evaluateComponents/data2";
 
-const SSCPrograms = ({ sscScore }) => {
+const SSCPrograms = ({ scoreStatus }) => {
   const [state, setState] = useContext(Context);
 
-  function getStatus(sscScore) {
-    switch (true) {
-      case 0 <= sscScore && sscScore < 50:
-        return "none";
-      case 50 <= sscScore && sscScore < 55:
-        return "very bad";
-
-      case 55 <= sscScore && sscScore < 60:
-        return "bad";
-      case 60 <= sscScore && sscScore <= 65:
-        return "good";
-      case 65 <= sscScore && sscScore <= 70:
-        return "very good";
-      case 70 <= sscScore && sscScore <= 75:
-        return "best";
-      case 75 <= sscScore && sscScore <= 80:
-        return "excellent";
-      case 80 <= sscScore && sscScore <= 85:
-        return "star";
-      case 85 <= sscScore && sscScore <= 90:
-        return "super";
-      case 90 <= sscScore && sscScore <= 95:
-        return "brilliant";
-      case 95 <= sscScore && sscScore <= 100:
-        return "perfect";
-    }
-  }
-
-  const scoreStatus = getStatus(sscScore);
+  
 
   const scholarships = scienceProgramsData
     .find((item) => item.score === scoreStatus)
@@ -74,7 +46,7 @@ const SSCPrograms = ({ sscScore }) => {
                   <Typography
                     style={{
                       padding: "20px 10px",
-                      color: "black",
+                      color: "#08c7ba",
                       fontWeight: "bold",
                     }}
                     variant="h6"
@@ -86,7 +58,7 @@ const SSCPrograms = ({ sscScore }) => {
                   <Typography
                     style={{
                       padding: "20px 10px",
-                      color: "black",
+                      color: "#08c7ba",
                       fontWeight: "bold",
                     }}
                     align="center"
@@ -103,7 +75,7 @@ const SSCPrograms = ({ sscScore }) => {
                   <Typography
                     style={{
                       padding: "20px 10px",
-                      color: "black",
+                      color: "#08c7ba",
                       fontWeight: "bold",
                     }}
                     variant="h6"
@@ -114,7 +86,7 @@ const SSCPrograms = ({ sscScore }) => {
                   <Typography
                     style={{
                       padding: "20px 10px",
-                      color: "black",
+                      color: "#08c7ba",
                       fontWeight: "bold",
                     }}
                   >
@@ -129,7 +101,7 @@ const SSCPrograms = ({ sscScore }) => {
                     <Typography
                       style={{
                         padding: "20px 10px",
-                        color: "black",
+                        color: "#08c7ba",
                         fontWeight: "bold",
                       }}
                       variant="h6"
@@ -140,7 +112,7 @@ const SSCPrograms = ({ sscScore }) => {
                     <Typography
                       style={{
                         padding: "20px 10px",
-                        color: "black",
+                        color: "#08c7ba",
                         fontWeight: "bold",
                       }}
                     >
@@ -153,7 +125,7 @@ const SSCPrograms = ({ sscScore }) => {
                   <Typography
                     style={{
                       padding: "20px 10px",
-                      color: "black",
+                      color: "#08c7ba",
                       fontWeight: "bold",
                     }}
                     variant="h6"
@@ -166,6 +138,7 @@ const SSCPrograms = ({ sscScore }) => {
                     <div className="select-wrapper">
                       <Grid container>
                         <select
+                          style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
                           required
                           className="formSelect"
                           id="program"
@@ -188,7 +161,7 @@ const SSCPrograms = ({ sscScore }) => {
                     <Link href="/apply">
                       <button
                         disableRipple
-                        className="nextBackButton"
+                        className="upbtn"
                         type="submit"
                       >
                         Continue
@@ -206,7 +179,7 @@ const SSCPrograms = ({ sscScore }) => {
             <Typography
               style={{
                 padding: "20px 10px",
-                color: "black",
+                color: "#08c7ba",
                 fontWeight: "bold",
               }}
               variant="h6"
@@ -218,7 +191,7 @@ const SSCPrograms = ({ sscScore }) => {
             <Typography
               style={{
                 padding: "20px 10px",
-                color: "black",
+                color: "#08c7ba",
                 fontWeight: "bold",
               }}
             >
