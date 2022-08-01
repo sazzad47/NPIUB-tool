@@ -187,7 +187,7 @@ const Apply = () => {
                             marginTop: "4rem",
                           }}
                         >
-                          You can now check our CSE courses and credits to get
+                          You can now check our CSE courses and credits to go
                           deeper into our program's pros and cons.
                         </Typography>
                       </CardContent>
