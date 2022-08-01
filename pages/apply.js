@@ -37,7 +37,7 @@ const Apply = () => {
     setUserData({ ...userData, [name]: value });
   };
   const [progress, setProgress] = useState(false);
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
 
   const form = useRef();
 
