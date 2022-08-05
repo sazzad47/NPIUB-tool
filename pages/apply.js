@@ -159,7 +159,7 @@ const Apply = () => {
                       elevation={3}
                       style={{
                         maxWidth: 450,
-                        padding: "20px 5px",
+                        padding: "0px 5px",
                         margin: "4rem auto",
                         display: "flex",
                         flexDirection: "column",
@@ -217,7 +217,7 @@ const Apply = () => {
                       elevation={3}
                       style={{
                         maxWidth: 450,
-                        padding: "20px 5px",
+                        padding: "0px 5px",
                         margin: "4rem auto",
                         backgroundColor:"#052252",
                         color:'#08c7ba',
