@@ -592,7 +592,7 @@ const Academics = ({setToggleState, userData, setUserData }) => {
               </div>
             </div>
             <div className="custom-form mt-4 mr-3 ml-1">
-              <h6> What was your department? *</h6>
+              <h6> What was your diploma program? *</h6>
               <Grid container>
                 <input
                 style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
@@ -608,7 +608,7 @@ const Academics = ({setToggleState, userData, setUserData }) => {
               </Grid>
             </div>
             <div className="custom-form mt-4 mr-3 ml-1">
-              <h6> Enter your GPA *</h6>
+              <h6> Enter your diploma GPA *</h6>
               <Grid container>
                 <input
                 style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
@@ -640,7 +640,7 @@ const Academics = ({setToggleState, userData, setUserData }) => {
               </Grid>
             </div>
             <div className="custom-form mt-4 mr-3 ml-1">
-              <h6 className="ms-2"> Year of passing: *</h6>
+              <h6 className="ms-2"> Your diploma passing year: *</h6>
               <div className="select-wrapper">
                 <Grid container>
                   <select
@@ -924,7 +924,7 @@ const Academics = ({setToggleState, userData, setUserData }) => {
               </div>
             </div>
             <div className="custom-form mt-4 mr-3 ml-1">
-              <h6> What was your department? *</h6>
+              <h6> What was your bachelors program? *</h6>
               <Grid container>
                 <input
                 style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
@@ -940,7 +940,7 @@ const Academics = ({setToggleState, userData, setUserData }) => {
               </Grid>
             </div>
             <div className="custom-form mt-4 mr-3 ml-1">
-              <h6> Enter your GPA *</h6>
+              <h6> Enter your bachelors GPA *</h6>
               <Grid container>
                 <input
                 style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
@@ -956,7 +956,7 @@ const Academics = ({setToggleState, userData, setUserData }) => {
               </Grid>
             </div>
             <div className="custom-form mt-4 mr-3 ml-1">
-              <h6> Institute Name: *</h6>
+              <h6> University Name: *</h6>
               <Grid container>
                 <input
                 style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
@@ -972,7 +972,7 @@ const Academics = ({setToggleState, userData, setUserData }) => {
               </Grid>
             </div>
             <div className="custom-form mt-4 mr-3 ml-1">
-              <h6 className="ms-2"> Year of passing: *</h6>
+              <h6 className="ms-2"> Your bachelors passing year: *</h6>
               <div className="select-wrapper">
                 <Grid container>
                   <select
