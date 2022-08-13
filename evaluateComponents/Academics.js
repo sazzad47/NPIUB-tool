@@ -2,6 +2,7 @@ import { yearData, boardData, facultyData } from "./data2";
 import { toast } from 'react-toastify';
 import { Grid, Typography } from "@material-ui/core";
 import valid from '../utils/valid'
+import { useState } from 'react';
 
 const Academics = ({setToggleState, userData, setUserData }) => {
   const {
@@ -29,6 +30,9 @@ const Academics = ({setToggleState, userData, setUserData }) => {
     diploma_pyear,
   } = userData;
 
+  const [next, setNext] = useState(0)
+  const [afterSSC, setAfterSSC] = useState('')
+
   const boards = boardData.map((name) => (
     <option key={name} value={name}>
       {name}
@@ -51,6 +55,7 @@ const Academics = ({setToggleState, userData, setUserData }) => {
   const handleInput = (e) => {
     const { name, value } = e.target;
     setUserData({ ...userData, [name]: value });
+    setNext(0)
   };
    
   
@@ -329,6 +334,8 @@ const Academics = ({setToggleState, userData, setUserData }) => {
                 </Grid>
               </div>
             </div>
+            {next ===1 && (
+            <>
             <div className="custom-form mt-4 mr-3 ml-1">
               <h6 className="ms-2">Select your HSC group *</h6>
               <div className="select-wrapper">
@@ -470,6 +477,7 @@ const Academics = ({setToggleState, userData, setUserData }) => {
                 </Grid>
               </div>
             </div>
+            </>)}
           </>
         );
       case "Diploma":
@@ -591,7 +599,9 @@ const Academics = ({setToggleState, userData, setUserData }) => {
                 </Grid>
               </div>
             </div>
-            <div className="custom-form mt-4 mr-3 ml-1">
+            {next === 1 && ( 
+              <>
+              <div className="custom-form mt-4 mr-3 ml-1">
               <h6> What was your diploma program? *</h6>
               <Grid container>
                 <input
@@ -686,6 +696,7 @@ const Academics = ({setToggleState, userData, setUserData }) => {
                 </Grid>
               </div>
             </div>
+            </>)}
           </>
         );
       case "Bachelors":
@@ -808,6 +819,35 @@ const Academics = ({setToggleState, userData, setUserData }) => {
               </div>
             </div>
             <div className="custom-form mt-4 mr-3 ml-1">
+              <h6 className="ms-2">What did you study after SSC? *</h6>
+              <div className="select-wrapper">
+                <Grid container>
+                  <select
+                    style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                    required
+                    className="formSelect"
+                    id="afterSSC"
+                    name="afterSSC"
+                    value={afterSSC}
+                    type="text"
+                    onChange={(e) => setAfterSSC(e.target.value)}
+                  >
+                    <option>
+                      please select...
+                    </option>
+                    <option value="HSC">HSC</option>
+                    <option value="Diploma">Diploma</option>
+                  </select>
+                </Grid>
+              </div>
+            </div>
+            {(next === 1 || next === 2 ) && (
+            <>
+
+            
+            { afterSSC === 'HSC'?
+            <>
+              <div className="custom-form mt-4 mr-3 ml-1">
               <h6 className="ms-2">Select your HSC group *</h6>
               <div className="select-wrapper">
                 <Grid container>
@@ -923,6 +963,82 @@ const Academics = ({setToggleState, userData, setUserData }) => {
                 </Grid>
               </div>
             </div>
+            </> :
+             <>
+             <div className="custom-form mt-4 mr-3 ml-1">
+              <h6> What was your diploma program? *</h6>
+              <Grid container>
+                <input
+                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                 placeholder=""
+                  required
+                  className="inputEvaluate"
+                  id="diploma_dept"
+                  name="diploma_dept"
+                  value={diploma_dept}
+                  type="text"
+                  onChange={handleInput}
+                />
+              </Grid>
+            </div>
+            <div className="custom-form mt-4 mr-3 ml-1">
+              <h6> Enter your diploma GPA *</h6>
+              <Grid container>
+                <input
+                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                 placeholder=""
+                  required
+                  className="inputEvaluate"
+                  id="diploma_result"
+                  name="diploma_result"
+                  value={diploma_result}
+                  type="number"
+                  onChange={handleInput}
+                />
+              </Grid>
+            </div>
+            <div className="custom-form mt-4 mr-3 ml-1">
+              <h6> Institute Name: *</h6>
+              <Grid container>
+                <input
+                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                 placeholder=""
+                  required
+                  className="inputEvaluate"
+                  id="diploma_institute"
+                  name="diploma_institute"
+                  value={diploma_institute}
+                  type="text"
+                  onChange={handleInput}
+                />
+              </Grid>
+            </div>
+            <div className="custom-form mt-4 mr-3 ml-1">
+              <h6 className="ms-2"> Your diploma passing year: *</h6>
+              <div className="select-wrapper">
+                <Grid container>
+                  <select
+                    style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                    required
+                    className="formSelect"
+                    id="diploma_pyear"
+                    name="diploma_pyear"
+                    value={diploma_pyear}
+                    type="number"
+                    onChange={handleInput}
+                  >
+                    <option>
+                      Please choose...
+                    </option>
+                    {years}
+                  </select>
+                </Grid>
+              </div>
+            </div>
+              </>}
+            {next === 2 && 
+            ( 
+              <>
             <div className="custom-form mt-4 mr-3 ml-1">
               <h6> What was your bachelors program? *</h6>
               <Grid container>
@@ -1018,17 +1134,25 @@ const Academics = ({setToggleState, userData, setUserData }) => {
                 </Grid>
               </div>
             </div>
+            </>)}
+            </>)}
           </>
         );
       default:
         return "";
     }
   }
+ 
   const handleNext = () => {
     const errMsg = valid(ssc_result, hsc_result, diploma_result, bachelors_result)
     if (errMsg) return toast.error(errMsg, {
       autoClose: 2000,
     })
+    if (((study_level === 'HSC') || (study_level === 'Diploma') || (study_level === 'Bachelors')) && next === 0)
+      return setNext((prevStep) => prevStep + 1);
+    if ((study_level === 'Bachelors') && next === 1)
+      return setNext((prevStep) => prevStep + 1);
+    
     setToggleState((prevActiveStep) => prevActiveStep + 1)
     toast.success('Great! now show your extra-curricular activities!', {
       autoClose: 2000,
@@ -1036,6 +1160,7 @@ const Academics = ({setToggleState, userData, setUserData }) => {
     })
     
   }
+ 
 
   return (
     <div style={{background:'#052252'}}>
