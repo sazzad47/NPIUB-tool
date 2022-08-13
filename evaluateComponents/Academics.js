@@ -55,7 +55,7 @@ const Academics = ({setToggleState, userData, setUserData }) => {
   const handleInput = (e) => {
     const { name, value } = e.target;
     setUserData({ ...userData, [name]: value });
-    setNext(0)
+    
   };
    
   
@@ -1182,7 +1182,10 @@ const Academics = ({setToggleState, userData, setUserData }) => {
               id="eduMedium"
               name="study_level"
               value={study_level}
-              onChange={handleInput}
+              onChange={(e) => {
+                handleInput(e); 
+                setNext(0)
+              }}
             >
               <option>
                 Please select...
