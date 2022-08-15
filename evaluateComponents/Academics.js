@@ -1,4 +1,4 @@
-import { yearData, boardData, facultyData } from "./data2";
+import { yearData, boardData, facultyData, prevProgramsData } from "./data2";
 import { toast } from 'react-toastify';
 import { Grid, Typography } from "@material-ui/core";
 import valid from '../utils/valid'
@@ -43,6 +43,14 @@ const Academics = ({setToggleState, userData, setUserData }) => {
       {name}
     </option>
   ));
+  const groups = prevProgramsData.map((name, index) => (
+    <option key={index} value={name.group}>
+      {name.group}
+    </option>
+  ));
+  const prevPrograms = prevProgramsData.find((group) => group.group === ssc_group)?.programs.map((program, index) => (
+    <option key={index} value={program}> {program} </option>
+  ))
 
   const faculties = facultyData.map((faculty) => (
     <option key={faculty.name} value={faculty.name}>
@@ -85,9 +93,7 @@ const Academics = ({setToggleState, userData, setUserData }) => {
                     <option>
                       please choose...
                     </option>
-                    <option value="Science">Science</option>
-                    <option value="Arts">Arts</option>
-                    <option value="Commerce">Commerce</option>
+                    {groups}
                   </select>
                 </Grid>
               </div>
@@ -235,9 +241,7 @@ const Academics = ({setToggleState, userData, setUserData }) => {
                     <option>
                       please select...
                     </option>
-                    <option value="Science">Science</option>
-                    <option value="Arts">Arts</option>
-                    <option value="Commerce">Commerce</option>
+                    {groups}
                   </select>
                 </Grid>
               </div>
@@ -353,9 +357,7 @@ const Academics = ({setToggleState, userData, setUserData }) => {
                     <option>
                       please select...
                     </option>
-                    <option value="Science">Science</option>
-                    <option value="Arts">Arts</option>
-                    <option value="Commerce">Commerce</option>
+                    {groups}
                   </select>
                 </Grid>
               </div>
@@ -431,7 +433,7 @@ const Academics = ({setToggleState, userData, setUserData }) => {
               </div>
             </div>
             <div className="custom-form mt-4 mr-3 ml-1">
-              <h6 className="ms-2"> select your HSC passing year: *</h6>
+              <h6 className="ms-2"> Select your HSC passing year: *</h6>
               <div className="select-wrapper">
                 <Grid container>
                   <select
@@ -500,9 +502,7 @@ const Academics = ({setToggleState, userData, setUserData }) => {
                     <option>
                       please select...
                     </option>
-                    <option value="Science">Science</option>
-                    <option value="Arts">Arts</option>
-                    <option value="Commerce">Commerce</option>
+                    {groups}
                   </select>
                 </Grid>
               </div>
@@ -602,20 +602,26 @@ const Academics = ({setToggleState, userData, setUserData }) => {
             {next === 1 && ( 
               <>
               <div className="custom-form mt-4 mr-3 ml-1">
-              <h6> What was your diploma program? *</h6>
-              <Grid container>
-                <input
-                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
-                 placeholder=""
-                  required
-                  className="inputEvaluate"
-                  id="diploma_dept"
-                  name="diploma_dept"
-                  value={diploma_dept}
-                  type="text"
-                  onChange={handleInput}
-                />
-              </Grid>
+              <h6 className="ms-2">What was your diploma program? *</h6>
+              <div className="select-wrapper">
+                <Grid container>
+                  <select
+                    style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                    required
+                    className="formSelect"
+                    id="diploma_dept"
+                    name="diploma_dept"
+                    value={diploma_dept}
+                    type="text"
+                    onChange={handleInput}
+                  >
+                    <option>
+                      please choose...
+                    </option>
+                   {prevPrograms}
+                  </select>
+                </Grid>
+              </div>
             </div>
             <div className="custom-form mt-4 mr-3 ml-1">
               <h6> Enter your diploma GPA *</h6>
@@ -719,9 +725,7 @@ const Academics = ({setToggleState, userData, setUserData }) => {
                     <option>
                       please select...
                     </option>
-                    <option value="Science">Science</option>
-                    <option value="Arts">Arts</option>
-                    <option value="Commerce">Commerce</option>
+                    {groups}
                   </select>
                 </Grid>
               </div>
@@ -864,9 +868,7 @@ const Academics = ({setToggleState, userData, setUserData }) => {
                     <option>
                       please select...
                     </option>
-                    <option value="Science">Science</option>
-                    <option value="Arts">Arts</option>
-                    <option value="Commerce">Commerce</option>
+                    {groups}
                   </select>
                 </Grid>
               </div>
@@ -965,21 +967,27 @@ const Academics = ({setToggleState, userData, setUserData }) => {
             </div>
             </> :
              <>
-             <div className="custom-form mt-4 mr-3 ml-1">
-              <h6> What was your diploma program? *</h6>
-              <Grid container>
-                <input
-                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
-                 placeholder=""
-                  required
-                  className="inputEvaluate"
-                  id="diploma_dept"
-                  name="diploma_dept"
-                  value={diploma_dept}
-                  type="text"
-                  onChange={handleInput}
-                />
-              </Grid>
+              <div className="custom-form mt-4 mr-3 ml-1">
+              <h6 className="ms-2">What was your diploma program? *</h6>
+              <div className="select-wrapper">
+                <Grid container>
+                  <select
+                    style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                    required
+                    className="formSelect"
+                    id="diploma_dept"
+                    name="diploma_dept"
+                    value={diploma_dept}
+                    type="text"
+                    onChange={handleInput}
+                  >
+                    <option>
+                      please choose...
+                    </option>
+                   {prevPrograms}
+                  </select>
+                </Grid>
+              </div>
             </div>
             <div className="custom-form mt-4 mr-3 ml-1">
               <h6> Enter your diploma GPA *</h6>
@@ -1039,21 +1047,27 @@ const Academics = ({setToggleState, userData, setUserData }) => {
             {next === 2 && 
             ( 
               <>
-            <div className="custom-form mt-4 mr-3 ml-1">
-              <h6> What was your bachelors program? *</h6>
-              <Grid container>
-                <input
-                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
-                 placeholder=""
-                  required
-                  className="inputEvaluate"
-                  id="bachelors_dept"
-                  name="bachelors_dept"
-                  value={bachelors_dept}
-                  type="text"
-                  onChange={handleInput}
-                />
-              </Grid>
+               <div className="custom-form mt-4 mr-3 ml-1">
+              <h6 className="ms-2">What was your bachelors program? *</h6>
+              <div className="select-wrapper">
+                <Grid container>
+                  <select
+                    style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                    required
+                    className="formSelect"
+                    id="bachelors_dept"
+                    name="bachelors_dept"
+                    value={bachelors_dept}
+                    type="text"
+                    onChange={handleInput}
+                  >
+                    <option>
+                      please choose...
+                    </option>
+                   {prevPrograms}
+                  </select>
+                </Grid>
+              </div>
             </div>
             <div className="custom-form mt-4 mr-3 ml-1">
               <h6> Enter your bachelors GPA *</h6>

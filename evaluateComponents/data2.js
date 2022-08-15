@@ -125,7 +125,47 @@ export const facultyData = [
     ],
   },
 ];
-
+export const prevProgramsData = [
+  {
+    group: 'Science',
+    programs:  ["Computer Science and Engineering",
+    "Electrical and Electronics Engineering",
+    "Textile Engineering",
+    "Civil Engineering",
+    "Bioengineering",
+    "Electrical Engineering",
+    "Environmental Science and Engineering",
+    "Mechanical Engineering",
+    "Marine Engineering",
+    "Shipbuilding Engineering"]
+  },
+  {
+    group: 'Arts',
+    programs:  ["Social science",
+    "Economics",
+    "Geography",
+    "Psychology",
+    "Sociology",
+    "Political Science",
+    "history",
+    "Anthropology",
+    "English",
+    "Philosophy",]
+  },
+  {
+    group: 'Commerce',
+    programs:  ["Business Administration",
+    "Accounting",
+    "Actuarial Science",
+    "Finance",
+    "Industrial Relations",
+    "Personnel Management",
+    "Human Resource Management",
+    "Strategic Management",
+    "Marketing",
+    "Research and Development"]
+  },
+]
 export const scienceProgramsData = [
   {
     score: "perfect",
