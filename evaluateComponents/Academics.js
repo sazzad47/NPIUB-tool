@@ -1393,9 +1393,6 @@ const Academics = ({ setToggleState, userData, setUserData }) => {
       return setNext((prevStep) => prevStep + 1);
 
     setToggleState((prevActiveStep) => prevActiveStep + 1);
-    toast.success("Great! now show your extra-curricular activities!", {
-      autoClose: 2000,
-    });
   };
 
   return (

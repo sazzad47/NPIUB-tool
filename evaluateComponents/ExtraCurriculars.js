@@ -30,9 +30,6 @@ const ExtraCurriculars = ({ setToggleState, userData, setUserData }) => {
   };
 
   const handleNext = () => {
-    toast.success("Genius! now show your achievements!", {
-      autoClose: 2000,
-    });
     setToggleState((prevActiveStep) => prevActiveStep + 1);
   };
   const handleBack = () => {
