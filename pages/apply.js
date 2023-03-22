@@ -1,11 +1,9 @@
 import React, { useRef, useContext, useState } from "react";
 import {
- 
   Card,
   CardContent,
   CircularProgress,
   Grid,
-  TextField,
   Typography,
 } from "@material-ui/core";
 import { Context } from "../context/Index";
@@ -13,7 +11,7 @@ import emailjs from "@emailjs/browser";
 import Link from "next/link";
 
 const Apply = () => {
-  const [state, setState] = useContext(Context);
+  const [ state ] = useContext(Context);
   const initialState = {
     user_name: "",
     user_email: "",
@@ -23,14 +21,7 @@ const Apply = () => {
     program: state?.program,
   };
   const [userData, setUserData] = useState(initialState);
-  const {
-    user_name,
-    user_email,
-    message,
-    address,
-    mobile,
-    program,
-  } = userData;
+  const { user_name, user_email, message, address, mobile, program } = userData;
 
   const handleChangeInput = (e) => {
     const { name, value } = e.target;
@@ -71,73 +62,70 @@ const Apply = () => {
         <>
           {!visible ? (
             <>
-              
-             
-              
-                    <div className='applyContainer'>
-                        <form className='box' ref={form} onSubmit={sendEmail}>
-                          <h3>Apply</h3>
-                          <input 
-                          type="text"
-                          placeholder="Enter your full name"
-                          fullWidth
-                          required
-                          id="user_name"
-                          name="user_name"
-                          value={user_name}
-                          onChange={handleChangeInput}
-                          />
-                          <input 
-                          className="d-none"
-                          type="text"
-                          id="program"
-                          name="program"
-                          value={program}
-                          onChange={handleChangeInput} 
-                          />
-                          
-                          <input
-                          type="email"
-                          placeholder="Enter your email"
-                          required
-                          id="user_email"
-                          name="user_email"
-                          value={user_email}
-                          onChange={handleChangeInput}
-                          />
-                          <input 
-                          placeholder="Enter your address"
-                          type="text"
-                          required
-                          id="address"
-                          name="address"
-                          value={address}
-                          onChange={handleChangeInput}
-                          />
-                          <input
-                          type="number"
-                          placeholder="Enter your mobile number"
-                          required
-                          id="mobile"
-                          name="mobile"
-                          value={mobile}
-                          onChange={handleChangeInput}
-                          />
-                          <textarea
-                          type="text"
-                          placeholder="Statement of purpose."
-                          required
-                          id="message"
-                          name="message"
-                          value={message}
-                          onChange={handleChangeInput}
-                          />
-                         
-                          <button type='submit' value='send'>Submit </button>
-                        </form>
-                    </div>
-              
-              
+              <div className="applyContainer">
+                <form className="box" ref={form} onSubmit={sendEmail}>
+                  <h3>Apply</h3>
+                  <input
+                    type="text"
+                    placeholder="Enter your full name"
+                    fullWidth
+                    required
+                    id="user_name"
+                    name="user_name"
+                    value={user_name}
+                    onChange={handleChangeInput}
+                  />
+                  <input
+                    className="d-none"
+                    type="text"
+                    id="program"
+                    name="program"
+                    value={program}
+                    onChange={handleChangeInput}
+                  />
+
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    required
+                    id="user_email"
+                    name="user_email"
+                    value={user_email}
+                    onChange={handleChangeInput}
+                  />
+                  <input
+                    placeholder="Enter your address"
+                    type="text"
+                    required
+                    id="address"
+                    name="address"
+                    value={address}
+                    onChange={handleChangeInput}
+                  />
+                  <input
+                    type="number"
+                    placeholder="Enter your mobile number"
+                    required
+                    id="mobile"
+                    name="mobile"
+                    value={mobile}
+                    onChange={handleChangeInput}
+                  />
+                  <textarea
+                    type="text"
+                    placeholder="Statement of purpose."
+                    required
+                    id="message"
+                    name="message"
+                    value={message}
+                    onChange={handleChangeInput}
+                  />
+
+                  <button type="submit" value="send">
+                    Submit{" "}
+                  </button>
+                </form>
+              </div>
             </>
           ) : (
             <>
@@ -164,15 +152,15 @@ const Apply = () => {
                         display: "flex",
                         flexDirection: "column",
                         justifyItems: "center",
-                        backgroundColor:"#052252",
-                        color: '#08c7ba',
+                        backgroundColor: "#052252",
+                        color: "#08c7ba",
                       }}
                     >
                       <CardContent>
                         <Typography
                           style={{
                             fontWeight: "bold",
-                            
+
                             fontSize: "19px",
                           }}
                         >
@@ -182,7 +170,7 @@ const Apply = () => {
                         <Typography
                           style={{
                             fontWeight: "bold",
-                            
+
                             fontSize: "19px",
                             marginTop: "4rem",
                           }}
@@ -193,7 +181,7 @@ const Apply = () => {
                       </CardContent>
                       <div className="col d-flex align-items-center justify-content-center my-3">
                         <Link href="/courses">
-                          <button className='upbtn'>Continue</button>
+                          <button className="upbtn">Continue</button>
                         </Link>
                       </div>
                     </Card>
@@ -219,15 +207,15 @@ const Apply = () => {
                         maxWidth: 450,
                         padding: "0px 5px",
                         margin: "4rem auto",
-                        backgroundColor:"#052252",
-                        color:'#08c7ba',
+                        backgroundColor: "#052252",
+                        color: "#08c7ba",
                       }}
                     >
                       <CardContent>
                         <Typography
                           style={{
                             fontWeight: "bold",
-                            
+
                             fontSize: "19px",
                           }}
                         >
@@ -237,9 +225,7 @@ const Apply = () => {
                       </CardContent>
                       <div className="col d-flex align-items-center justify-content-center my-3">
                         <Link href="/">
-                          <button className='upbtn'>
-                            Back to Home
-                          </button>
+                          <button className="upbtn">Back to Home</button>
                         </Link>
                       </div>
                     </Card>

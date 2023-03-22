@@ -9,7 +9,11 @@ const EvaluateMe = () => {
       <div className="col-md-6">
         <Card
           elevation={6}
-          style={{ marginBottom: "2rem", margin: "2rem 1rem", background:'#052252' }}
+          style={{
+            marginBottom: "2rem",
+            margin: "2rem 1rem",
+            background: "#052252",
+          }}
         >
           <Typography
             style={{
@@ -23,8 +27,7 @@ const EvaluateMe = () => {
             Evaluate Your Profile
           </Typography>
         </Card>
-
-        <Grid style={{ margin: "0 1rem", }}>
+        <Grid style={{ margin: "0 1rem" }}>
           <Evaluate />
         </Grid>
       </div>

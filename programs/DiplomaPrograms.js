@@ -8,8 +8,6 @@ import { scienceProgramsData } from "../evaluateComponents/data2";
 const DiplomaPrograms = ({ scoreStatus }) => {
   const [state, setState] = useContext(Context);
 
- 
-
   const scholarships = scienceProgramsData
     .find((item) => item.score === scoreStatus)
     ?.scholarships.map((scholarship) => (
@@ -135,7 +133,12 @@ const DiplomaPrograms = ({ scoreStatus }) => {
                 <div className="select-wrapper">
                   <Grid container>
                     <select
-                     style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                      style={{
+                        background: "none",
+                        outline: "none",
+                        border: "1px solid #0b306b",
+                        color: "#08c7ba",
+                      }}
                       required
                       className="formSelect"
                       id="program"
@@ -156,11 +159,7 @@ const DiplomaPrograms = ({ scoreStatus }) => {
 
               <div className="d-flex justify-content-center mt-5">
                 <Link href="/apply">
-                  <button
-                    disableRipple
-                    className="upbtn"
-                    type="submit"
-                  >
+                  <button disableRipple className="upbtn" type="submit">
                     Continue
                   </button>
                 </Link>

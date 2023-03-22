@@ -1,19 +1,14 @@
 import React, { useState, useContext } from "react";
-import {toast} from 'react-toastify';
+import { toast } from "react-toastify";
 import { Grid, Typography } from "@material-ui/core";
 import { Context } from "../context/Index";
-import valid from '../utils/valid';
+import valid from "../utils/valid";
 
-
-const Achievements = ({setToggleState, userData, setUserData }) => {
+const Achievements = ({ setToggleState, userData, setUserData }) => {
   const [state, setState] = useContext(Context);
-
-  const {ssc_result, hsc_result, diploma_result, bachelors_result} = userData
-
+  const { ssc_result, hsc_result, diploma_result, bachelors_result } = userData;
   const { achievements, volunteerAchievements } = userData;
-
   const [achievementsTypes, setAchievementsTypes] = useState("");
-
   const [volunteerAchievementsTypes, setVolunteerAchievementsTypes] = useState(
     []
   );
@@ -36,33 +31,36 @@ const Achievements = ({setToggleState, userData, setUserData }) => {
       );
     }
   };
-   
-  
+
   const handleInput = (e) => {
     const { name, value } = e.target;
     setUserData({ ...userData, [name]: value });
   };
   const handleNext = () => {
     setState(userData);
-    const errMsg = valid(ssc_result, hsc_result, diploma_result, bachelors_result)
-    if (errMsg) return toast.error(errMsg, {
-      autoClose:2000,
-    })
-    setToggleState((prevActiveStep) => prevActiveStep + 1)
-    
-  }
+    const errMsg = valid(
+      ssc_result,
+      hsc_result,
+      diploma_result,
+      bachelors_result
+    );
+    if (errMsg)
+      return toast.error(errMsg, {
+        autoClose: 2000,
+      });
+    setToggleState((prevActiveStep) => prevActiveStep + 1);
+  };
   const handleBack = () => {
-    
-    setToggleState((prevActiveStep) => prevActiveStep - 1)
-  }
+    setToggleState((prevActiveStep) => prevActiveStep - 1);
+  };
   return (
-    <div style={{background:'#052252'}}>
+    <div style={{ background: "#052252" }}>
       <Typography
         style={{ padding: "20px 10px", color: "#08c7ba", fontWeight: "bold" }}
         variant="h6"
         align="center"
       >
-        Achievements 
+        Achievements
       </Typography>
 
       <div className="custom-form mt-4 mr-3 ml-1">
@@ -70,19 +68,20 @@ const Achievements = ({setToggleState, userData, setUserData }) => {
         <div className="select-wrapper">
           <Grid container>
             <select
-             style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+              style={{
+                background: "none",
+                outline: "none",
+                border: "1px solid #0b306b",
+                color: "#08c7ba",
+              }}
               required
               className="formSelect"
-              
               id="achievements"
               name="achievements"
               value={achievements}
               onChange={handleInput}
-              
             >
-              <option>
-                Please choose...
-              </option>
+              <option>Please choose...</option>
               <option value="5">Yes</option>
               <option value="1">No</option>
             </select>
@@ -98,7 +97,12 @@ const Achievements = ({setToggleState, userData, setUserData }) => {
           <div className="">
             <div className="checkboxContainer">
               <input
-                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                style={{
+                  background: "none",
+                  outline: "none",
+                  border: "1px solid #0b306b",
+                  color: "#08c7ba",
+                }}
                 className="ecCheckbox"
                 type="checkbox"
                 value="Scholarship"
@@ -106,7 +110,12 @@ const Achievements = ({setToggleState, userData, setUserData }) => {
               />
               Scholarship
               <input
-                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                style={{
+                  background: "none",
+                  outline: "none",
+                  border: "1px solid #0b306b",
+                  color: "#08c7ba",
+                }}
                 className="ecCheckbox"
                 type="checkbox"
                 value="Award"
@@ -114,7 +123,12 @@ const Achievements = ({setToggleState, userData, setUserData }) => {
               />
               Award
               <input
-                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                style={{
+                  background: "none",
+                  outline: "none",
+                  border: "1px solid #0b306b",
+                  color: "#08c7ba",
+                }}
                 className="ecCheckbox"
                 type="checkbox"
                 value="Project"
@@ -122,7 +136,12 @@ const Achievements = ({setToggleState, userData, setUserData }) => {
               />
               Project
               <input
-                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                style={{
+                  background: "none",
+                  outline: "none",
+                  border: "1px solid #0b306b",
+                  color: "#08c7ba",
+                }}
                 className="ecCheckbox"
                 type="checkbox"
                 value="Publication"
@@ -138,19 +157,20 @@ const Achievements = ({setToggleState, userData, setUserData }) => {
         <div className="select-wrapper">
           <Grid container>
             <select
-             style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+              style={{
+                background: "none",
+                outline: "none",
+                border: "1px solid #0b306b",
+                color: "#08c7ba",
+              }}
               required
               className="formSelect"
-              
               id="volunteerAchievements"
               name="volunteerAchievements"
               value={volunteerAchievements}
               onChange={handleInput}
-              
             >
-              <option>
-                Please choose...
-              </option>
+              <option>Please choose...</option>
               <option value="5">Yes</option>
               <option value="1">No</option>
             </select>
@@ -166,7 +186,12 @@ const Achievements = ({setToggleState, userData, setUserData }) => {
           <div className="">
             <div className="checkboxContainer">
               <input
-                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                style={{
+                  background: "none",
+                  outline: "none",
+                  border: "1px solid #0b306b",
+                  color: "#08c7ba",
+                }}
                 className="ecCheckbox"
                 type="checkbox"
                 value="Award"
@@ -174,7 +199,12 @@ const Achievements = ({setToggleState, userData, setUserData }) => {
               />
               Award
               <input
-                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                style={{
+                  background: "none",
+                  outline: "none",
+                  border: "1px solid #0b306b",
+                  color: "#08c7ba",
+                }}
                 className="ecCheckbox"
                 type="checkbox"
                 value="Won competitions"
@@ -182,7 +212,12 @@ const Achievements = ({setToggleState, userData, setUserData }) => {
               />
               Won competitions
               <input
-                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                style={{
+                  background: "none",
+                  outline: "none",
+                  border: "1px solid #0b306b",
+                  color: "#08c7ba",
+                }}
                 className="ecCheckbox"
                 type="checkbox"
                 value="Participated competitions"
@@ -193,9 +228,13 @@ const Achievements = ({setToggleState, userData, setUserData }) => {
           </div>
         </div>
       )}
-       <div className="d-flex justify-content-between  mx-3 my-5">
-              <button className='upbtn' onClick={handleBack}>Back</button>
-              <button className='upbtn' onClick={handleNext}>View Score</button>
+      <div className="d-flex justify-content-between  mx-3 my-5">
+        <button className="upbtn" onClick={handleBack}>
+          Back
+        </button>
+        <button className="upbtn" onClick={handleNext}>
+          View Score
+        </button>
       </div>
     </div>
   );

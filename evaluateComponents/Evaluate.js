@@ -1,7 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 import { Context } from "../context/Index";
-import { useRouter } from "next/router";
 import { Card, Grid, Typography } from "@material-ui/core";
 import Academics from "./Academics";
 import ExtraCurriculars from "./ExtraCurriculars";
@@ -12,16 +11,10 @@ import SSCPrograms from "../programs/SSCPrograms";
 import HSCPrograms from "../programs/HSCPrograms";
 import DiplomaPrograms from "../programs/DiplomaPrograms";
 import BachelorsPrograms from "../programs/BachelorsPrograms";
-import valid from "../utils/valid"
-
-
-
-
-
+import valid from "../utils/valid";
 
 function Evaluate() {
-  const router = useRouter();
-  const [state, setState] = useContext(Context);
+  const [ state ] = useContext(Context);
 
   const initState = {
     study_level: "",
@@ -51,7 +44,6 @@ function Evaluate() {
 
   const [userData, setUserData] = useState(initState);
   const [toggleState, setToggleState] = useState();
-
 
   const ssc_result = parseFloat(state?.ssc_result);
   const hsc_result = parseFloat(state?.hsc_result);
@@ -85,9 +77,9 @@ function Evaluate() {
     converted_bachelors_result +
     non_academic_result;
 
- const study_level = state?.study_level;
+  const study_level = state?.study_level;
 
- const getScore = (study_level) => {
+  const getScore = (study_level) => {
     switch (study_level) {
       case "Under SSC":
         return non_academic_result;
@@ -102,7 +94,7 @@ function Evaluate() {
       default:
         return "";
     }
-  }  
+  };
 
   const score = getScore(study_level);
 
@@ -133,9 +125,8 @@ function Evaluate() {
         return "perfect";
     }
   }
-    
+
   const scoreStatus = getStatus(score);
-  
 
   function getPrograms(study_level) {
     switch (study_level) {
@@ -143,7 +134,10 @@ function Evaluate() {
         return (
           <>
             <div className="programsContainer">
-              <UnderSSC setToggleState={setToggleState} scoreStatus={scoreStatus}/>
+              <UnderSSC
+                setToggleState={setToggleState}
+                scoreStatus={scoreStatus}
+              />
             </div>
           </>
         );
@@ -151,7 +145,7 @@ function Evaluate() {
         return (
           <>
             <div className="programsContainer">
-              <SSCPrograms sscScore={sscScore} scoreStatus={scoreStatus}/>
+              <SSCPrograms sscScore={sscScore} scoreStatus={scoreStatus} />
             </div>
           </>
         );
@@ -159,7 +153,7 @@ function Evaluate() {
         return (
           <>
             <div className="programsContainer">
-              <HSCPrograms hscScore={hscScore} scoreStatus={scoreStatus}/>
+              <HSCPrograms hscScore={hscScore} scoreStatus={scoreStatus} />
             </div>
           </>
         );
@@ -167,53 +161,56 @@ function Evaluate() {
         return (
           <>
             <div className="programsContainer">
-              <DiplomaPrograms diplomaScore={diplomaScore} scoreStatus={scoreStatus}/>
+              <DiplomaPrograms
+                diplomaScore={diplomaScore}
+                scoreStatus={scoreStatus}
+              />
             </div>
           </>
         );
       case "Bachelors":
         return (
           <>
-            <BachelorsPrograms bachelorsScore={bachelorsScore} scoreStatus={scoreStatus}/>
+            <BachelorsPrograms
+              bachelorsScore={bachelorsScore}
+              scoreStatus={scoreStatus}
+            />
           </>
         );
       default:
         return "";
     }
-  } 
-   
-   const programs = getPrograms(study_level);
-  
-  
-  useEffect(() => {
-    try {
-         if (sessionStorage.getItem('tab')) {
-          setToggleState(JSON.parse(sessionStorage.getItem('tab')))
-         } else {
-          setToggleState(1)
-         }
-    } catch (error) {
-         console.log(error)
-    }
-  },['tab'])
+  }
+
+  const programs = getPrograms(study_level);
 
   useEffect(() => {
-      sessionStorage.setItem('tab', JSON.stringify(toggleState))
- },[toggleState])
+    try {
+      if (sessionStorage.getItem("tab")) {
+        setToggleState(JSON.parse(sessionStorage.getItem("tab")));
+      } else {
+        setToggleState(1);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }, ["tab"]);
+
+  useEffect(() => {
+    sessionStorage.setItem("tab", JSON.stringify(toggleState));
+  }, [toggleState]);
 
   const toggleTab = (index) => {
     setToggleState(index);
   };
- 
- 
-
-  
 
   return (
     <div>
-
       <div>
-        <Card elevation={6} style={{ padding: '0.5rem', background:'#052252' }}>
+        <Card
+          elevation={6}
+          style={{ padding: "0.5rem", background: "#052252" }}
+        >
           <Grid
             style={{ marginTop: "10px", marginBottom: "10px" }}
             container
@@ -328,11 +325,18 @@ function Evaluate() {
                   toggleState === 4 ? "activeScoreTab" : "normalScoreTab"
                 }
                 onClick={() => {
-                  const errMsg = valid(ssc_result, hsc_result, diploma_result, bachelors_result)
-                  if (errMsg) return toast.error(errMsg, {
-                    autoClose: 2000,
-                  })
-                  toggleTab(4)}}
+                  const errMsg = valid(
+                    ssc_result,
+                    hsc_result,
+                    diploma_result,
+                    bachelors_result
+                  );
+                  if (errMsg)
+                    return toast.error(errMsg, {
+                      autoClose: 2000,
+                    });
+                  toggleTab(4);
+                }}
               >
                 <Typography
                   style={{
@@ -349,14 +353,25 @@ function Evaluate() {
         </Card>
       </div>
 
-      <Card elevation={6} style={{ marginTop: "50px", marginBottom: "50px",background:'#052252' }}>
+      <Card
+        elevation={6}
+        style={{
+          marginTop: "50px",
+          marginBottom: "50px",
+          background: "#052252",
+        }}
+      >
         <div className="content-tabs">
           <div
             className={
               toggleState === 1 ? "content  active-content" : "content"
             }
           >
-            <Academics setToggleState={setToggleState} userData={userData} setUserData={setUserData} />
+            <Academics
+              setToggleState={setToggleState}
+              userData={userData}
+              setUserData={setUserData}
+            />
           </div>
 
           <div
@@ -364,31 +379,38 @@ function Evaluate() {
               toggleState === 2 ? "content  active-content" : "content"
             }
           >
-            <ExtraCurriculars setToggleState={setToggleState} userData={userData} setUserData={setUserData} />
+            <ExtraCurriculars
+              setToggleState={setToggleState}
+              userData={userData}
+              setUserData={setUserData}
+            />
           </div>
           <div
             className={
               toggleState === 3 ? "content  active-content" : "content"
             }
           >
-            <Achievements 
-            setToggleState={setToggleState} 
-            userData={userData} 
-            setUserData={setUserData} 
-            score={score}
-            scoreStatus = {scoreStatus}
-             />
+            <Achievements
+              setToggleState={setToggleState}
+              userData={userData}
+              setUserData={setUserData}
+              score={score}
+              scoreStatus={scoreStatus}
+            />
           </div>
           <div
             className={
               toggleState === 4 ? "content  active-content" : "content"
             }
           >
-            <Score setToggleState={setToggleState} userData={userData} setUserData={setUserData} score={score} programs={programs}/>
+            <Score
+              setToggleState={setToggleState}
+              userData={userData}
+              setUserData={setUserData}
+              score={score}
+              programs={programs}
+            />
           </div>
-          
-           
-          
         </div>
       </Card>
     </div>

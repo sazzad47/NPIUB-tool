@@ -134,18 +134,30 @@ const Home = () => {
           <div className="col-12 col-md-6 px-2 py-5 py-md-0 d-flex align-items-center justify-content-center">
             <ul className="mx-5">
               <li
-                style={{ fontWeight: "bold", color: "#08c7ba", fontSize: "16px" }}
+                style={{
+                  fontWeight: "bold",
+                  color: "#08c7ba",
+                  fontSize: "16px",
+                }}
               >
                 Understand your Profile Strengths
               </li>
 
               <li
-                style={{ fontWeight: "bold", color: "#08c7ba", fontSize: "16px" }}
+                style={{
+                  fontWeight: "bold",
+                  color: "#08c7ba",
+                  fontSize: "16px",
+                }}
               >
                 Get a program list based on your profile
               </li>
               <li
-                style={{ fontWeight: "bold", color: "#08c7ba", fontSize: "16px" }}
+                style={{
+                  fontWeight: "bold",
+                  color: "#08c7ba",
+                  fontSize: "16px",
+                }}
               >
                 Get a scholarship list according to your profile
               </li>

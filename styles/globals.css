@@ -126,7 +126,7 @@ a {
   align-items: flex-start;
   justify-content: center;
   background: url(../public/score-up.png) no-repeat;
-  border: 2px solid #08c7ba;
+  opacity: 0.7;
   background-size: cover;
   background-position: center;
   width: 130px;
@@ -139,12 +139,11 @@ a {
   align-items: flex-start;
   justify-content: center;
   background: url(../public/academics-up.png) no-repeat;
-  border: 2px solid #08c7ba;
+  opacity: 0.7;
   background-size: cover;
   background-position: center;
   width: 130px;
   height: 110px;
-
   font-family: sans-serif;
 }
 .activeAchievementTab {
@@ -152,7 +151,7 @@ a {
   align-items: flex-start;
   justify-content: center;
   background: url(../public/achievements-up.png) no-repeat;
-  border: 2px solid #08c7ba;
+  opacity: 0.7;
   background-size: cover;
   background-position: center;
   width: 130px;
@@ -165,7 +164,7 @@ a {
   align-items: flex-start;
   justify-content: center;
   background: url(../public/extra-up.png) no-repeat;
-  border: 2px solid #08c7ba;
+  opacity: 0.7;
   background-size: cover;
   background-position: center;
   width: 130px;

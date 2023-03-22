@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import {toast} from 'react-toastify'
+import { toast } from "react-toastify";
 import { Grid, Typography } from "@material-ui/core";
 
-const ExtraCurriculars = ({setToggleState, userData, setUserData }) => {
+const ExtraCurriculars = ({ setToggleState, userData, setUserData }) => {
   const { ECactivities, volunteerActivities } = userData;
   const [ECtypes, setECtypes] = useState([]);
 
@@ -30,18 +30,17 @@ const ExtraCurriculars = ({setToggleState, userData, setUserData }) => {
   };
 
   const handleNext = () => {
-    toast.success('Genius! now show your achievements!', {
+    toast.success("Genius! now show your achievements!", {
       autoClose: 2000,
-    })
-    setToggleState((prevActiveStep) => prevActiveStep + 1)
-  }
+    });
+    setToggleState((prevActiveStep) => prevActiveStep + 1);
+  };
   const handleBack = () => {
-    
-    setToggleState((prevActiveStep) => prevActiveStep - 1)
-  }
+    setToggleState((prevActiveStep) => prevActiveStep - 1);
+  };
 
   return (
-    <div style={{background:'#052252'}}>
+    <div style={{ background: "#052252" }}>
       <Typography
         style={{ padding: "20px 10px", color: "#08c7ba", fontWeight: "bold" }}
         variant="h6"
@@ -58,20 +57,20 @@ const ExtraCurriculars = ({setToggleState, userData, setUserData }) => {
         <div className="select-wrapper">
           <Grid container>
             <select
-              style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+              style={{
+                background: "none",
+                outline: "none",
+                border: "1px solid #0b306b",
+                color: "#08c7ba",
+              }}
               required
               className="formSelect"
-             
-              
               id="ECactivities"
               name="ECactivities"
               value={ECactivities}
               onChange={handleInput}
-              
             >
-              <option>
-                Please choose...
-              </option>
+              <option>Please choose...</option>
               <option value="5">Yes</option>
               <option value="1">No</option>
             </select>
@@ -87,7 +86,12 @@ const ExtraCurriculars = ({setToggleState, userData, setUserData }) => {
           <div className="">
             <div className="checkboxContainer">
               <input
-                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                style={{
+                  background: "none",
+                  outline: "none",
+                  border: "1px solid #0b306b",
+                  color: "#08c7ba",
+                }}
                 className="ecCheckbox"
                 type="checkbox"
                 value="Sports"
@@ -95,7 +99,12 @@ const ExtraCurriculars = ({setToggleState, userData, setUserData }) => {
               />
               Sports
               <input
-                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                style={{
+                  background: "none",
+                  outline: "none",
+                  border: "1px solid #0b306b",
+                  color: "#08c7ba",
+                }}
                 className="ecCheckbox"
                 type="checkbox"
                 value="Community Service"
@@ -103,7 +112,12 @@ const ExtraCurriculars = ({setToggleState, userData, setUserData }) => {
               />
               Community Service
               <input
-                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                style={{
+                  background: "none",
+                  outline: "none",
+                  border: "1px solid #0b306b",
+                  color: "#08c7ba",
+                }}
                 className="ecCheckbox"
                 type="checkbox"
                 value="Employment"
@@ -111,7 +125,12 @@ const ExtraCurriculars = ({setToggleState, userData, setUserData }) => {
               />
               Employment
               <input
-                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                style={{
+                  background: "none",
+                  outline: "none",
+                  border: "1px solid #0b306b",
+                  color: "#08c7ba",
+                }}
                 className="ecCheckbox"
                 type="checkbox"
                 value="Student Government"
@@ -119,7 +138,12 @@ const ExtraCurriculars = ({setToggleState, userData, setUserData }) => {
               />
               Student Government
               <input
-                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                style={{
+                  background: "none",
+                  outline: "none",
+                  border: "1px solid #0b306b",
+                  color: "#08c7ba",
+                }}
                 className="ecCheckbox"
                 type="checkbox"
                 value="Academic Clubs"
@@ -127,7 +151,12 @@ const ExtraCurriculars = ({setToggleState, userData, setUserData }) => {
               />
               Academic Clubs
               <input
-                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                style={{
+                  background: "none",
+                  outline: "none",
+                  border: "1px solid #0b306b",
+                  color: "#08c7ba",
+                }}
                 className="ecCheckbox"
                 type="checkbox"
                 value="Arts"
@@ -146,20 +175,20 @@ const ExtraCurriculars = ({setToggleState, userData, setUserData }) => {
         <div className="select-wrapper">
           <Grid container>
             <select
-              style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+              style={{
+                background: "none",
+                outline: "none",
+                border: "1px solid #0b306b",
+                color: "#08c7ba",
+              }}
               required
               className="formSelect"
-             
-             
               id="volunteerActivities"
               name="volunteerActivities"
               value={volunteerActivities}
               onChange={handleInput}
-              
             >
-              <option>
-                Please choose...
-              </option>
+              <option>Please choose...</option>
               <option value="5">Yes</option>
               <option value="1">No</option>
             </select>
@@ -172,7 +201,12 @@ const ExtraCurriculars = ({setToggleState, userData, setUserData }) => {
           <div className="">
             <div className="checkboxContainer">
               <input
-                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                style={{
+                  background: "none",
+                  outline: "none",
+                  border: "1px solid #0b306b",
+                  color: "#08c7ba",
+                }}
                 className="ecCheckbox"
                 type="checkbox"
                 value="I led an event"
@@ -180,7 +214,12 @@ const ExtraCurriculars = ({setToggleState, userData, setUserData }) => {
               />
               I led an event
               <input
-                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                style={{
+                  background: "none",
+                  outline: "none",
+                  border: "1px solid #0b306b",
+                  color: "#08c7ba",
+                }}
                 className="ecCheckbox"
                 type="checkbox"
                 value="I created an event"
@@ -188,7 +227,12 @@ const ExtraCurriculars = ({setToggleState, userData, setUserData }) => {
               />
               I created an event
               <input
-                style={{background:'none',outline:'none', border:'1px solid #0b306b',color:'#08c7ba'}}
+                style={{
+                  background: "none",
+                  outline: "none",
+                  border: "1px solid #0b306b",
+                  color: "#08c7ba",
+                }}
                 className="ecCheckbox"
                 type="checkbox"
                 value="I was a member of a team"
@@ -200,8 +244,12 @@ const ExtraCurriculars = ({setToggleState, userData, setUserData }) => {
         </div>
       )}
       <div className="d-flex justify-content-between  mx-3 my-5">
-              <button className='upbtn' onClick={handleBack}>Back</button>
-              <button className='upbtn' onClick={handleNext}>Next</button>
+        <button className="upbtn" onClick={handleBack}>
+          Back
+        </button>
+        <button className="upbtn" onClick={handleNext}>
+          Next
+        </button>
       </div>
     </div>
   );
